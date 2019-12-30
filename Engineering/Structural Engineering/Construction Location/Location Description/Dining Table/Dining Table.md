@@ -1,3 +1,5 @@
+## Construction Location - Dining Table
+
 * This location will be the primary construction site for the model airport.
 
 * Dining Table is 3' x 6'. Height is 30".
