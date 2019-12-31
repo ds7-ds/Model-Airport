@@ -14,6 +14,8 @@
 
 * Bosch GSR18V-190 Power Tool
 
+* Bosch #34614 14.4V Power Tool
+
 * DeWalt 37 Piece Driver Bit Set Mfr. Model #DW2176
 
 * DeWalt 14 Piece Drill Bit Set with 1/16" to 3/8" Mfr. Model #DW1162
@@ -30,7 +32,7 @@
 
 1. Drill 1/4" holes on the plywood sheet as shown on the plan. Make sure the about-to-be-drilled hole is not touching the workbench. When hole is drilled, the workbench should not be damaged. See "Plywood Sheet About-To-Be-Drilled Hole Setup" image for details.
 
-1. Drill 1/4" holes on the aluminum brackets as shown on the plan. When hole is drilled, the workbench should not be damaged. See "Plywood Sheet About-To-Be-Drilled Hole Setup" image for general idea.
+1. Drill 1/4" holes on the aluminum brackets as shown on the plan. When hole is drilled, the workbench should not be damaged. See "Aluminum Brackets About-To-Be-Drilled Hole Setup" image for general idea.
 
 1. Use nuts and bolts listed in the materials section to fasten the plywood sheet and aluminum brackets together. Assembly must match what is shown on the plan.
 
