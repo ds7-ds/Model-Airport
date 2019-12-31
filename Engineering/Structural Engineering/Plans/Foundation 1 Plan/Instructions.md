@@ -24,11 +24,11 @@
 
 1. Check tools before use. Also, refer the Foundation 1 plan. This plan will be used for all instructions below.
 
-1. Cut the aluminum brackets into the lengths necessary. The desired lengths are 42 1/2" and 16 1/2".
-
 1. Drill 1/4" holes on the plywood sheet as shown on the plan.
 
 1. Drill 1/4" holes on the aluminum brackets as shown on the plan.
+
+1. Cut the aluminum brackets into the lengths necessary. The desired lengths are 42 1/2" and 16 1/2".
 
 1. Use nuts and bolts listed in the materials section to fasten the plywood sheet and aluminum brackets together. Assembly must match what is shown on the plan.
 
