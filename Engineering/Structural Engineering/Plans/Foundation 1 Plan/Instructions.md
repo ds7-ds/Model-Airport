@@ -26,11 +26,11 @@
 
 1. Mark all holes and cuts to be made on the aluminum brackets and on the plywood sheet.
 
-1. Cut the aluminum brackets into the lengths necessary. The desired lengths are 42 1/2" and 16 1/2".
+1. Cut the aluminum brackets into the lengths necessary. The desired lengths are 42 1/2" and 16 1/2". Make sure to use scrap wood beams underneath the bracket before cutting to avoid damage to the workbench. Refer to "Aluminum Bracket Cutting Setup" image for a general idea.
 
-1. Drill 1/4" holes on the plywood sheet as shown on the plan.
+1. Drill 1/4" holes on the plywood sheet as shown on the plan. Make sure the about-to-be-drilled hole is not touching the workbench. When hole is drilled, the workbench should not be damaged. See "Plywood Sheet About-To-Be-Drilled Hole Setup" image for details.
 
-1. Drill 1/4" holes on the aluminum brackets as shown on the plan.
+1. Drill 1/4" holes on the aluminum brackets as shown on the plan. When hole is drilled, the workbench should not be damaged. See "Plywood Sheet About-To-Be-Drilled Hole Setup" image for general idea.
 
 1. Use nuts and bolts listed in the materials section to fasten the plywood sheet and aluminum brackets together. Assembly must match what is shown on the plan.
 
