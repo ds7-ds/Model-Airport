@@ -24,6 +24,8 @@
 
 1. Check tools before use. Also, refer the Foundation 1 plan. This plan will be used for all instructions below.
 
+1. Mark all holes and cuts to be made on the aluminum brackets and on the plywood sheet.
+
 1. Drill 1/4" holes on the plywood sheet as shown on the plan.
 
 1. Drill 1/4" holes on the aluminum brackets as shown on the plan.
