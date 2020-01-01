@@ -4,7 +4,7 @@
 
 * Foundation 1
 
-* Scrap 59" Aluminum Refrigerator LED Bracket
+* Scrap 59" Aluminum Refrigerator LED Bracket (20"-40" scrap length)
 
 * Flat workbench
 
