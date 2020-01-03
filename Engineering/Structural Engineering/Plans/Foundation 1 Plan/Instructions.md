@@ -6,7 +6,7 @@
 
 * (?) Nuts and Bolts - TBD at construction
 
-* (2) 59" Aluminum Refrigerator LED Brackets
+* (3) 59" Aluminum Refrigerator LED Brackets
 
 ## Tools Required:
 
@@ -19,6 +19,8 @@
 * DeWalt 37 Piece Driver Bit Set Mfr. Model #DW2176
 
 * DeWalt 14 Piece Drill Bit Set with 1/16" to 3/8" Mfr. Model #DW1162
+
+* Dremel MultiProKit 3966
 
 ## Instructions:
 
