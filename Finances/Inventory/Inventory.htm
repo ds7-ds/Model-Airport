@@ -15,19 +15,21 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <link id="shLink" href="Inventory_files/sheet003.htm">
 <link id="shLink" href="Inventory_files/sheet004.htm">
 <link id="shLink" href="Inventory_files/sheet005.htm">
+<link id="shLink" href="Inventory_files/sheet006.htm">
 
 <link id="shLink">
 
 <script language="JavaScript">
 <!--
- var c_lTabs=5;
+ var c_lTabs=6;
 
  var c_rgszSh=new Array(c_lTabs);
  c_rgszSh[0] = "Tools";
  c_rgszSh[1] = "Electronics";
  c_rgszSh[2] = "Construction Materials";
  c_rgszSh[3] = "Aircraft";
- c_rgszSh[4] = "Other";
+ c_rgszSh[4] = "Engineered ";
+ c_rgszSh[5] = "Other";
 
 
 
@@ -321,8 +323,12 @@ function fnSetActiveSheet(iSh)
     <x:WorksheetSource HRef="Inventory_files/sheet004.htm"/>
    </x:ExcelWorksheet>
    <x:ExcelWorksheet>
-    <x:Name>Other</x:Name>
+    <x:Name>Engineered </x:Name>
     <x:WorksheetSource HRef="Inventory_files/sheet005.htm"/>
+   </x:ExcelWorksheet>
+   <x:ExcelWorksheet>
+    <x:Name>Other</x:Name>
+    <x:WorksheetSource HRef="Inventory_files/sheet006.htm"/>
    </x:ExcelWorksheet>
   </x:ExcelWorksheets>
   <x:Stylesheet HRef="Inventory_files/stylesheet.css"/>
