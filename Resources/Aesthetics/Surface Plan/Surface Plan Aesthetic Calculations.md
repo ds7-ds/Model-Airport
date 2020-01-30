@@ -43,3 +43,8 @@
    * 38 Blue LEDs - taxiway only
    * 15 Green LEDs - runway only
    * 12 White LEDs - runway only
+
+* Design 3 Lighting
+   * 38 Blue LEDs - taxiway only
+   * 15 Green LEDs - runway only
+   * 14 White LEDs - runway only
