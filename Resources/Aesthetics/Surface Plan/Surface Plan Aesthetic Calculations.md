@@ -29,6 +29,17 @@
 
 ## Surface Plan Lighting
 
-* 34 Blue LEDs - taxiway only
-* 11 Green LEDs - runway only
-* 10 White LEDs - runway only
+* Design 1 Lighting
+   * 34 Blue LEDs - taxiway only
+   * 11 Green LEDs - runway only
+   * 10 White LEDs - runway only
+
+* Design 2 Lighting
+   * 38 Blue LEDs - taxiway only
+   * 15 Green LEDs - runway only
+   * 10 White LEDs - runway only
+
+* Design 3 Lighting
+   * 38 Blue LEDs - taxiway only
+   * 15 Green LEDs - runway only
+   * 12 White LEDs - runway only
