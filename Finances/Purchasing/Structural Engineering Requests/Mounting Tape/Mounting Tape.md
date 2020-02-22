@@ -40,8 +40,12 @@ Two options were found at Home Depot:
 
 ## Chosen Option
 
-Option 2 is cheaper. No significant differences were observed between the two options in terms of material quality. Option 1 is clear and the other is white. Color does not seem to matter so Option 2 will be chosen. Two rolls of mounting tape is 2 * $4.27 = $8.54. Three rolls of mounting tape is 3 * $4.27 = $12.81. Two rolls seem sufficient and using scrap is a main goal of this project.
+Option 2 is cheaper. No significant differences were observed between the two options in terms of material quality. Option 1 is clear and the other is white. Color does not seem to matter so Option 2 will be chosen. Two rolls of mounting tape is 2 * $4.27 = $8.54. Three rolls of mounting tape is 3 * $4.27 = $12.81. Two rolls seem sufficient and using scrap is a main goal of this project. This product must be checked at Home Depot before a decision can be made to buy it or not.
 
 ## Cost
 
 * Two rolls of Option 2 : $8.54
+
+## Status of Approval
+
+> Pending.
