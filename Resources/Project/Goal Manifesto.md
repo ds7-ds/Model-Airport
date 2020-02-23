@@ -6,4 +6,4 @@
 
 1. Break this project into stages which will allow efficient construction.
 
-1. Find and check with consultants for advice on construction especially for all non-CS related engineering development.
+1. Check with advisers at all times to ensure construction of airport goes efficiently for all non-CS related development.
