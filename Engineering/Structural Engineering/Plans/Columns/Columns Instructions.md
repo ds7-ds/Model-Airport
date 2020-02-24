@@ -24,7 +24,7 @@
 
 ## Instructions:
 
-1. Construct the inner column part (lightly shaded area on blueprint).See chart on design plan for quantity of these column parts. 
+1. Construct the inner column part (lightly shaded area on blueprint). See chart on design plan for quantity of these column parts. 
 
 1. Construct the outer column part (darkly shaded area on blueprint). See chart on design plan for quantity of these column parts.
 
