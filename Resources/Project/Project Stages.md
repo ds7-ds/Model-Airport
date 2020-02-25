@@ -29,8 +29,6 @@
       * DarshanShet777
       * NP
    * Structural Engineering
-      * Foundation 1
-      * Columns
       * Foundation 2 without lighting
       * Surface without scenery
    * Mechanical Engineering
@@ -47,11 +45,12 @@
    * Software Engineering
       * Create Website
          * Create website with animation of airport
-         * Create airport controller with webcam on another website
+         * Create airport controller with webcam support on another website
       * Choose language (Java, Node.js, Python) for
          * Airport Control
          * Airport Logger
          * Airport AJAX to AWS/Heroku servers
+         * Webcam
    * Finance
       * Update Inventory sheets
       * Update Budget sheet
