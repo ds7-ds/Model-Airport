@@ -2,7 +2,7 @@
 
 1. ### Phase 1 - Basic Model Airport (12/25/2019 - Expected 
    * Group Members
-         * DarshanShet777
+      * DarshanShet777
    * Structural Engineering
       * Foundation 1
       * Columns
@@ -26,8 +26,8 @@
 
 1. ### Phase 2 - Hardware/Software
    * Group Members
-         * DarshanShet777
-         * NP
+      * DarshanShet777
+      * NP
    * Structural Engineering
       * Foundation 1
       * Columns
