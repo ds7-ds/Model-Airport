@@ -28,6 +28,10 @@
    * Group Members
       * DarshanShet777
       * NP
+      * SF
+      * EE/ME Advisor
+      * ME Advisor
+      * ME Advisor 2
    * Structural Engineering
       * Foundation 2 without lighting
       * Surface without scenery
@@ -43,14 +47,16 @@
       * Raspberry Pi addition
          * Explore features available
    * Software Engineering
+      * Research languages and document on GitHub
       * Create Website
-         * Create website with animation of airport
+         * Create template website with animation of airport
          * Create airport controller with webcam support on another website
       * Choose language (Java, Node.js, Python) for
-         * Airport Control
+         * Airport Controller
          * Airport Logger
          * Airport AJAX to AWS/Heroku servers
          * Webcam
+      * Ultimate goal: templated design
    * Finance
       * Update Inventory sheets
       * Update Budget sheet
