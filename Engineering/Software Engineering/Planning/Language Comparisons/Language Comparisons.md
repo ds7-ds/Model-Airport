@@ -9,4 +9,4 @@ Strength | Server-side | OOP | Data Science
 Package Manager | NPM | Maven, Gradle,... | PIP
 Best Project Size | Small | Large | Medium
 Memory Intensive | Best | Best | Good
-**Airport Best Use** | **Real Time Data Transfers (Webcam, Off-Site Controls), Logging** | **Airport Controls (GPIO), Logging** | **Performance Analysis, Logging**
+**Airport Best Use** | **Real Time Data Transfers (Webcam, Off-Site Controls), Logging** | **Airport Controls (GPIO), Logging** | **Performance Analysis, Logging, (All rounder language)**
