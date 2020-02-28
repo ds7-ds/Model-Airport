@@ -4,7 +4,7 @@
 
 1. Use GitHub as the one and only place for all documentation.
 
-1. Use Discord as the one and only place for all communication except when inviting members to the project.
+1. Use Slack as the one and only place for all communication except when inviting members to the project.
 
 1. Break this project into stages which will allow for efficient construction.
 

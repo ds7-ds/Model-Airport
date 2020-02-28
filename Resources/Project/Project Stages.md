@@ -10,8 +10,9 @@
       * Surface without scenery
    * Mechanical Engineering
       * Completed robot design
+      * Check with EE/ME Advisor for robot approval
    * Electrical Engineering
-      * Power robot with batterieswith no extra electronics
+      * Power robot with batteries with no extra electronics
       * No lighting for airport.
    * Software Engineering
       * None in this phase
@@ -24,7 +25,7 @@
       * Document important project information
       * Invite members to project
 
-1. ### Phase 2 - Hardware/Software
+1. ### Phase 2 - Initial Hardware/Software
    * Group Members
       * DarshanShet777
       * NP
@@ -35,17 +36,23 @@
    * Structural Engineering
       * Foundation 2 without lighting
       * Surface without scenery
+      * Plan IR post sensor location and wiring
    * Mechanical Engineering
-      * None in this phase
+      * Adjust robot design as needed if electronics installment poses a challenge
    * Electrical Engineering
       * Robot
          * Plan sensors for robot
          * Plan logic for robot (Microcontrollers, 555 Timer etc.)
+         * Plan motor driver
+         * Plan batteries and battery configuration for robot
       * Airport Sensors
          * Plan sensors for robot tracking
       * No lighting for airport
       * Raspberry Pi addition
          * Explore features available
+         * Understand GPIO and Python/Node.js
+      * Build robot electronics onto robot
+      * Build IR posts for Foundation 1
    * Software Engineering
       * Research languages and document on GitHub
       * Create Website
