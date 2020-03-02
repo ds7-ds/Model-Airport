@@ -6,8 +6,7 @@
 
 This file will contain a class called ModelAircraft which contains this JSON:
 
-```
-
+```json
 {"name" : "",
 "id" : 0,
 "aircraft" : "",
