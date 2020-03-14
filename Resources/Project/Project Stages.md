@@ -72,3 +72,24 @@
       * Research airport design and operation (Aesthetics)
       * Document important project information
       * Invite members to project
+
+1. ### Phase 3 - Unfinished Structural Completion
+   * Group Members
+      * Darshan Shet
+   * Structural Engineering
+      * Foundation 2 without lighting
+      * Surface without scenery
+      * Build Backstage with space for electronics
+   * Mechanical Engineering
+      * None
+   * Electrical Engineering
+      * Check documentation for future reference-ability
+   * Software Engineering
+      * Continue with Phase 2 goals if not yet completed
+   * Finance
+      * Update Inventory sheets
+      * Update Budget sheet
+      * Track purchases made by engineering
+   * Resources
+      * Document important project information
+      * Invite members to project
