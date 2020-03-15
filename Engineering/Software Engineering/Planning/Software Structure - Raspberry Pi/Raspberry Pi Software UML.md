@@ -1,7 +1,7 @@
 # Raspberry Pi Software UML
 
 ```
-       (Start)
+    (On Start Up)
           |
           |
           v
