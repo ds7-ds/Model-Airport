@@ -1,6 +1,7 @@
 # Raspberry Pi Software UML
 
-       Start
+```
+       (Start)
           |
           |
           v
@@ -46,3 +47,4 @@
                            *        (Python)       *
                            *                       *
                            *************************
+```
