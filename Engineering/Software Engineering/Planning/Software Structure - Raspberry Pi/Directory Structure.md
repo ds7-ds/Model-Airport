@@ -12,6 +12,13 @@ ModelAirport
      |         |-- ModelAirportGraph.py
      |         |-- ModelAirportGPIO.py
      |         +-- ModelAirportLogger.py
+     |
+     |-- res
+     |    |-- ModelAircrafts.md
+     |    |-- ModelAirportCheckposts.md
+     |    |-- ModelAirportTimeLimit.md
+     |    +-- TBD
+     |
      |-- docs
      |    +-- TBD
      |
