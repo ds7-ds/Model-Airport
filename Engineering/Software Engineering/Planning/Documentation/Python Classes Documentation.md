@@ -1,10 +1,10 @@
 # Python Files Documentation
 
-## Files that need to be implemented and how to do it
+### Side Notes
 
 Dictionaries are very useful in Python as it allows key/value pairs and is easily human readable. All methods will use dictionaries to pass or return information from one class or method to the next and for debugging purposes.
 
-### ModelAirportGraph.py
+## ModelAirportGraph.py
 
 This file will contain a class called ModelAirportGraph.
 
@@ -13,16 +13,16 @@ It will have a dictionary called ModelAirportCheckposts which contain objects wi
 ```json
 
 {"location" : "",
-"id" : 999,
 "type" : "",
+"id" : 999,
 "next_id" : 999,
-"code" : "",
 "GPIO_pin": 999,
+"code" : "",
 "occupied" : false,
 "will_be_occupied" : false}
 
 ```
-as well as a dictionary called ModelAircrafts which contain objects with properties:
+as well as a dictionary called ModelAircrafts which contain objects with properties (JSON used as format):
 
 
 ```json
@@ -32,8 +32,8 @@ as well as a dictionary called ModelAircrafts which contain objects with propert
 "aircraft" : "",
 "id" : 999,
 "current_location" : 999,
-"previous_location" : ,
-"next_location" : }
+"previous_location" : 999,
+"next_location" : 999}
 
 ```
 
@@ -41,45 +41,148 @@ ModelAirportCheckpoints stores a graph of all the sensor posts on the model airp
 
 ModelAircrafts stores information and history about the aircraft.
 
-These two dictionaries will be used by the ModelAirportGraph class to track and run the airport. See the "Raspberry Pi Software UML.md" file for more details. Functions are listed below:
+These two dictionaries will be used by the ModelAirportGraph class to track and run the airport based on ModelAirportGTC's orders. See the "Raspberry Pi Software UML.md" file for more details. Functions are listed below:
 
 ```python
 
 class ModelAirportGraph:
 
-  def __init__(self, **posts_and_aircraft_file_paths)
+  def __init__(self, file_paths)
     pass
 
-  def create_E_Post(**postInfo):
+  def create_E_Post(self, postInfo):
     # private function
     return None
 
-  def create_RE_Post(**postInfo):
+  def create_RE_Post(self, postInfo):
     # private function
     return None
 
-  def create_Graph(**postInfo):
+  def create_No_Post(self, postInfo):
+    # private function
     return None
 
-  def get_Aircraft_List():
+  def create_Graph(self, postInfo):
+    return None
+
+  def get_Aircraft_List(self, message):
     return list
 
-  def move_Aircraft(**aircraft):
+  def get_Aircraft_Information(self, aircraft):
+    return aircraft_Info
+
+  def move_Aircraft(self, aircraft):
     return None
 
-  def get_AirCraft_At_Post(**aircraft):
+  def get_AirCraft_At_Post(self, aircraft):
     return aircraft
 
-  def is_Post_Occupied(**post):
+  def is_Post_Occupied(self, post):
     return post_Occupied_Info
 
-  def get_Aircraft_Post_Location(**aircraft):
+  def get_Aircraft_Post_Location(self, aircraft):
     return post_Info
+
+  def get_Aircraft_Next_Post_Location(self, aircraft):
+    return post_Info
+
+  '''
+  Add functions for airport lighting control.
+  Make sure to update this documentation.
+  '''
+
+  def get_Status(self):
+    return status
 
 ```
 
-### ModelAirportGTC.py
+## ModelAirportLogger.py
 
+class ModelAirportLogger:
 
+  def __init__(self, file_path)
 
-### ConnectGTC.py
+  def create_Log(self):
+    return None
+
+  def append_To_Log(self, args):
+    return None
+
+  def close_Log(self):
+    return None
+
+## ModelAirportGTC.py
+
+This program provides GTC operations for the airport to run 
+
+```python
+
+class ModelAirportGTC:
+
+  def __init__(self, file_paths):
+    setup()
+
+  def setup(self, file_paths):
+    return None
+
+  def next(self):
+    return None
+
+  def next(self, command):
+    return None
+
+  def status(self):
+    return airportStatus
+
+  def end(self):
+    return None
+
+```
+
+## ConnectGTC.py
+
+ConnectGTC can be considered as the main program which calls ModelAirportGTC. It runs all airport operations and makes the calls. The python program itself is actually spawned by ModelAirport.js. Unless the ConnectGTC does not receive a command from the user in certain amount of time, the airport runs itself automatically by calling next() repeatedly. If a command is received, the airport invokes the next(**command) and gives the user the ability to run the airport. Of course, error checking is done to prevent human input errors from causing a catastrophe. Before each call to next() or next(**command), status() must be called. The status() function returns the state of the airport and its operability. ConnectGTC also sends messages to the calling program ModelAirport about the airport status and other requested information such as aircraft information or lighting state.
+
+## ModelAirportGPIO.py
+
+Handles all GPIO operations including airport lighting.
+
+```python
+
+class ModelAirportGPIO:
+
+  def __init__(self, GPIO_filepath):
+    pass
+
+  def set_RE_Sensor_Pin(self, pin)
+    # private function
+    return None
+
+  def set_E_Sensor_Pin(self, pin)
+    # private function
+    return None
+
+  def set_Airport_Lighting_Pin(self, pin)
+    # private function
+    return None
+
+  def set_Airport_Terminal_Lighting_Pin(self, pin)
+    #private function
+    return None
+
+  def get_RE_Sensor_State(self, state)
+    return value
+
+  def set_RE_Sensor_State(self, state)
+    return None
+
+  def set_E_Sensor_State(self, state)
+    return None
+
+  def set_Airport_Lighting_State(self, state)
+    return None
+
+  def set_Airport_Terminal_Lighting_State(self, state)
+    return None
+
+```
