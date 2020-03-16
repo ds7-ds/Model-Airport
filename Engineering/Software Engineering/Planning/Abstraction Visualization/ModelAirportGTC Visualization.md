@@ -1,6 +1,6 @@
 # ModelAirportGTC Visualization
 
-### next()
+## next()
 
 ```
                       |
@@ -17,7 +17,7 @@
 
 
 ```
-### next(command)
+## next(command)
 
 ```
                       |
