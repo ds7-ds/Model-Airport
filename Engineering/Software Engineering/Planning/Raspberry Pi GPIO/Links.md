@@ -3,3 +3,5 @@
 * https://www.raspberrypi.org/documentation/usage/gpio/
 
 * https://gpiozero.readthedocs.io/en/stable/
+
+* https://pinout.xyz/pinout/ground
