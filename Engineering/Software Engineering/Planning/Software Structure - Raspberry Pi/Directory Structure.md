@@ -4,7 +4,7 @@
 
 ModelAirport
      |-- src
-     |    |-- node.js
+     |    |-- node
      |    |    +-- ModelAirport.js
      |    +-- python
      |         |-- ConnectGTC.py
@@ -14,17 +14,20 @@ ModelAirport
      |         +-- ModelAirportLogger.py
      |
      |-- res
-     |    |-- ModelAircrafts.md
-     |    |-- ModelAirportCheckposts.md
-     |    |-- ModelAirportTimeLimit.md
+     |    |-- ModelAircrafts.txt
+     |    |-- ModelAirportCheckposts.txt
+     |    |-- ModelAirportTimeLimit.txt
+     |    |-- ModelAirportGPIO.txt
+     |    |-- ModelAirportLogFilePath.txt
      |    +-- TBD
      |
      |-- docs
+     |    |-- ModelAirportVersion.txt
      |    +-- TBD
      |
      +-- logs
-          |-- ModelAirportOperationLog.md
-          +-- ModelAirportServerConnectionLog.md
+          |-- ModelAirportOperationLog.txt
+          +-- ModelAirportServerConnectionLog.txt
 
 
 ```

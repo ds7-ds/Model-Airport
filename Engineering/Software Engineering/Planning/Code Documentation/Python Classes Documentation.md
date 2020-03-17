@@ -37,10 +37,10 @@ This program provides GTC operations for the airport to run in a state by state 
 
 class ModelAirportGTC:
 
-  def __init__(self, file_paths):
+  def __init__(self):
     setup()
 
-  def setup(self, file_paths):
+  def setup(self):
     return None
 
   def next(self):
@@ -60,36 +60,30 @@ class ModelAirportGTC:
 ## ModelAirportGraph.py
 
 
-ModelAirportGraph will have a dictionary called ModelAirportCheckposts which contain objects with these properties (JSON used as format):
-
-```json
-
-{"location" : "",
-"type" : "",
-"id" : 999,
-"next_id" : 999,
-"GPIO_pin": 999,
-"code" : "",
-"occupied" : false,
-"will_be_occupied" : false}
+ModelAirportGraph will have a dictionary called ModelAirportCheckposts which contain objects with these properties:
 
 ```
-as well as a dictionary called ModelAircrafts which contain objects with properties (JSON used as format):
+location
+next_location
+type
+occupied
+will_be_occupied
+
+```
+as well as a dictionary called ModelAircrafts which contain objects with properties:
 
 
-```json
-
-{"name" : "",
-"registration" : "",
-"aircraft" : "",
-"id" : 999,
-"current_location" : 999,
-"previous_location" : 999,
-"next_location" : 999}
+```
+registration
+airline
+aircraft
+current_location
+previous_location
+next_location
 
 ```
 
-ModelAirportCheckposts stores a graph of all the sensor posts on the model airport. The posts act as a checkpoint for all aircraft. Planes go from one post to another in most states. The airport will be running on states as it allows for control and debugging ease. Two different sensor posts will be on the airport: E-Post and RE-Post. E-Posts are sensor posts with just an emitter and no receiver. They can control the aircraft but cannot detect whether the aircraft is present at the post. RE-Posts are sensor posts with an emitter and a receiver but they can detect whether the aircraft is at the post or not. The property post_type records this information. Also, there will be abstract posts which do not actually exist on the model airport but are there so that a map of the airport can be created. Overall, three posts types are there: E-Posts, RE-Posts, and No-Posts (Abstract Posts). The property "location" records where the post is. For example, a post could be named like "Backstage Entrance" or "Runway Line-Up". Every post will have an id and the first post starts from zero. The id is for the program to use as numbers are faster to compare than strings. Every post has to be connected to the Raspberry Pi electronically through some pin, and hence the GPIO_pin property. The occupied properties help the ModelAirportGTC to be able to track the aircraft and the future state of the airport.
+ModelAirportCheckposts stores a graph of all the sensor posts on the model airport. The posts act as a checkpoint for all aircraft. Planes go from one post to another in most states. The airport will be running on states as it allows for control and debugging ease. Two different sensor posts will be on the airport: E-Post and RE-Post. E-Posts are sensor posts with just an emitter and no receiver. They can control the aircraft but cannot detect whether the aircraft is present at the post. RE-Posts are sensor posts with an emitter and a receiver but they can detect whether the aircraft is at the post or not. The property post_type records this information. Also, there will be abstract posts which do not actually exist on the model airport but are there so that a map of the airport can be created. Overall, three posts types are there: E-Posts, RE-Posts, and No-Posts (Abstract Posts). The property "location" records where the post is. For example, a post could be named like "Backstage Entrance" or "Runway Line-Up". Every post will have an id and the first post starts from zero. Every post has to be connected to the Raspberry Pi electronically through some pin, and hence the GPIO_pin property. The occupied properties help the ModelAirportGTC to be able to track the aircraft and the future state of the airport.
 
 ModelAircrafts stores information and history about the aircraft. The ModelAirportGraph class will update some properties when states change.
 
@@ -99,7 +93,7 @@ These two dictionaries will be used by the ModelAirportGraph class to track and 
 
 class ModelAirportGraph:
 
-  def __init__(self, file_paths)
+  def __init__(self)
     pass
 
   def create_E_Post(self, postInfo):
@@ -169,13 +163,31 @@ class ModelAirportLogger:
 
 ## ModelAirportGPIO.py
 
-Handles all GPIO operations including airport lighting.
+Handles all GPIO operations including airport lighting. When class is called, the init() function will read in GPIO data from a text file conveniently called ModelAirportGPIO.txt with these properties for each object:
+
+```
+debug_mode
+
+pin_description
+GPIO_pin
+
+pin_description
+GPIO_pin
+
+pin_description
+GPIO_pin
+
+...
+
+
+```
+The class will look like this:
 
 ```python
 
 class ModelAirportGPIO:
 
-  def __init__(self, GPIO_filepath):
+  def __init__(self):
     pass
 
   def set_RE_Sensor_Pin(self, pin)
@@ -209,4 +221,15 @@ class ModelAirportGPIO:
   def set_Airport_Terminal_Lighting_State(self, state)
     return None
 
+```
+
+The "state" dictionary must have the following properties:
+
+```json
+{
+"sensor" : "",
+"state" : "",
+"debug" : ""
+}
+}
 ```
