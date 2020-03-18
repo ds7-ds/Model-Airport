@@ -2,7 +2,7 @@
 
 ```
 
-ModelAirport
+modelairport
      |-- src
      |    |-- node
      |    |    +-- ModelAirport.js
