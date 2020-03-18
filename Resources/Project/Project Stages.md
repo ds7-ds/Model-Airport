@@ -34,9 +34,7 @@
       * ME Advisor
       * ME Advisor 2
    * Structural Engineering
-      * Foundation 2 without lighting
-      * Surface without scenery
-      * Plan IR post sensor location and wiring
+      * Plan and build IR post sensor location and wiring
    * Mechanical Engineering
       * Adjust robot design as needed if electronics installment poses a challenge
    * Electrical Engineering
