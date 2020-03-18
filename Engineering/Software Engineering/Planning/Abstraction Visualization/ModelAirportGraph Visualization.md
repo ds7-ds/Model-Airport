@@ -14,11 +14,11 @@
 
 
 ```
-* ModelAirportGraph simply changes the dictionary objects and then reflects the current state of the objects through ModelAirportGPIO
+* ModelAirportGraph simply changes the dictionary objects and then reflects the current state of the objects (image) through ModelAirportGPIO
 
 
 ## Model Airport Image
-
+```
 **************************************************************
 *  Model Airport Image                                       *
 *                                                            *
@@ -32,3 +32,4 @@
 *  *************************  ****************************   *
 *                                                            *
 **************************************************************
+```
