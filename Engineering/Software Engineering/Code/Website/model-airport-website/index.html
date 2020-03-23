@@ -7,13 +7,53 @@
         <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
     </head>
     <body>
-        <div>
-            <label class="mdc-text-field" data-mdc-auto-init="MDCTextField">
-                <div class="mdc-text-field__ripple"></div>
-                <input class="mdc-text-field__input" type="text" aria-labelledby="label">
-                <span id="label" class="mdc-floating-label">Input Label</span>
-                <div class="mdc-line-ripple"></div>
-            </label>
+        <div class="model-airport-app">
+            <div class="model-airport-topbar">
+                <div class="mdc-tab-bar" role="tablist" data-mdc-auto-init="MDCTabBar">
+                    <div class="mdc-tab-scroller">
+                        <div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
+                            <div class="mdc-tab-scroller__scroll-content">
+                                <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" id="mdc-tab-1">
+                                    <span class="mdc-tab__content">
+                                        <span class="mdc-tab__text-label">Video</span>
+                                    </span>
+                                    <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span>
+                                    </span>
+                                    <span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:142px; --mdc-ripple-fg-scale:1.78141; --mdc-ripple-fg-translate-start:93.5px, -42px; --mdc-ripple-fg-translate-end:48.0859px, -47px;"></span>
+                                </button>
+                                <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-2">
+                                    <span class="mdc-tab__content">
+                                        <span class="mdc-tab__text-label">Info</span>
+                                    </span>
+                                    <span class="mdc-tab-indicator">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span>
+                                    </span>
+                                    <span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:182px; --mdc-ripple-fg-scale:1.7458; --mdc-ripple-fg-translate-start:97.3281px, -63px; --mdc-ripple-fg-translate-end:60.9844px, -67px;"></span>
+                                </button>
+                                <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-3">
+                                    <span class="mdc-tab__content">
+                                        <span class="mdc-tab__text-label">AuthN</span>
+                                    </span>
+                                    <span class="mdc-tab-indicator">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span>
+                                    </span>
+                                    <span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:161px; --mdc-ripple-fg-scale:1.76466; --mdc-ripple-fg-translate-start:38.8594px, -52.5px; --mdc-ripple-fg-translate-end:54.4375px, -56.5px;"></span>
+                                </button>
+                                <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-4">
+                                    <span class="mdc-tab__content">
+                                        <span class="mdc-tab__text-label">RC</span>
+                                    </span>
+                                    <span class="mdc-tab-indicator">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span>
+                                    </span>
+                                    <span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:161px; --mdc-ripple-fg-scale:1.76466; --mdc-ripple-fg-translate-start:38.8594px, -52.5px; --mdc-ripple-fg-translate-end:54.4375px, -56.5px;"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <script>
             window.mdc.autoInit();
