@@ -3,12 +3,23 @@
     <head>
         <title></title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+        <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-old-ie-min.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+        <!--<![endif]-->
         <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
         <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="js/jquery.fitvids.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <div class="model-airport-app">
-            <div class="model-airport-topbar">
+        <div id="model-airport-app">
+            <div id="model-airport-topbar">
                 <div class="mdc-tab-bar" role="tablist" data-mdc-auto-init="MDCTabBar">
                     <div class="mdc-tab-scroller">
                         <div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
@@ -54,9 +65,58 @@
                     </div>
                 </div>
             </div>
+            <div id="model-airport-content">
+                <div id="model-airport-video">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/9WL-sbFfE3E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div id="model-airport-info">
+                    <p>Info</p>
+                </div>
+                <div id="model-airport-auth">
+                    <p>Auth</p>
+                </div>
+                <div id="model-airport-rc">
+                    <p>RC</p>
+                </div>
+            </div>
         </div>
         <script>
             window.mdc.autoInit();
+
+            $(document).ready(function(){
+                $(".video-container").fitVids();
+                $("#model-airport-video").show();
+                $("#model-airport-info").hide();
+                $("#model-airport-auth").hide();
+                $("#model-airport-rc").hide();
+                $("#mdc-tab-1").click(function(){
+                    $("#model-airport-video").show();
+                    $("#model-airport-info").hide();
+                    $("#model-airport-auth").hide();
+                    $("#model-airport-rc").hide();
+                });
+                $("#mdc-tab-2").click(function(){
+                    $("#model-airport-video").hide();
+                    $("#model-airport-info").show();
+                    $("#model-airport-auth").hide();
+                    $("#model-airport-rc").hide();
+                });
+                $("#mdc-tab-3").click(function(){
+                    $("#model-airport-video").hide();
+                    $("#model-airport-info").hide();
+                    $("#model-airport-auth").show();
+                    $("#model-airport-rc").hide();
+                });
+                $("#mdc-tab-4").click(function(){
+                    $("#model-airport-video").hide();
+                    $("#model-airport-info").hide();
+                    $("#model-airport-auth").hide();
+                    $("#model-airport-rc").show();
+                });
+            });
+
         </script>
         <noscript>JavaScript required!</noscript>
     </body>
