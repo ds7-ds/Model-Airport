@@ -1,0 +1,16 @@
+.g-custom p{
+    text-align: center;
+}
+
+.g-custom img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+.header-custom{
+    text-align: center;
+    font-size: 40px;
+    font-family: "Comic Sans MS";
+}
