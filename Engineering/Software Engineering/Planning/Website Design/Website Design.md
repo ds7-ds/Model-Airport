@@ -22,11 +22,9 @@
 
 * Contains extra information about the model airport
 
-#### Authentication
-
-* To access the controller, users must log in with username and password
-
 #### Controller
+
+* To access the controller, users must first log in with username and password
 
 * Contains the live stream of the airport on top
 
@@ -39,3 +37,5 @@
 #### Links
 
 * https://material.io/
+
+* https://purecss.io/
