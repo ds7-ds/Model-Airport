@@ -1,9 +1,5 @@
 # Python Files Documentation
 
-#### Side Notes
-
-Dictionaries are very useful in Python as it allows key/value pairs and is easily human readable. All functions will use dictionaries to pass or return information from one class or method to the next and for debugging purposes.
-
 ## ConnectGTC.py
 
 #### Description
@@ -69,36 +65,73 @@ class ModelAirportGTC:
 
 #### Description
 
-ModelAirportGraph's main job is to create an image of the airport and also use ModelAirportGPIO to output the image. ModelAirportGraph class will store that image using two dictionaries. The first dictionary is called ModelAirportCheckposts. ModelAirportCheckposts stores a graph of all the sensor posts on the model airport. The posts act as a checkpoint for all aircraft. Planes go from one post to another in most states. Two different sensor posts will be on the airport: E-Post and RE-Post. E-Posts are sensor posts with just an emitter and no receiver. They can control the aircraft but cannot detect whether the aircraft is present at the post. RE-Posts are sensor posts with an emitter and a receiver but they can detect whether the aircraft is at the post or not. The property "type" records this information. Also, there will be abstract posts which do not actually exist on the model airport but are there so that a map of the airport can be created. Overall, three posts types are there: E-Posts, RE-Posts, and No-Posts (Abstract Posts). The property "location" records where the post is. For example, a post could be named like "Backstage Entrance" or "Runway Line-Up". Every post has to be connected to the Raspberry Pi electronically through some pin, and hence the GPIO_pin property. The occupied properties help the ModelAirportGTC to be able to track the aircraft and the future state of the airport. ModelAircrafts stores information and history about the aircraft. Like it was stated before, these two different dictionaries which contain information about the airport make up the virtual image of the airport. In every state, this image gets constantly modified and then reflected onto the real model airport.
+ModelAirportGraph's main job is to create an image of the airport and also use ModelAirportGPIO to output the image. ModelAirportGraph class will store that image using two dictionaries. The first dictionary is called ModelAirportCheckposts. ModelAirportCheckposts stores a graph of all the sensor posts on the model airport. The posts act as a checkpoint for all aircraft. Planes go from one post to another in most states. Two different sensor posts will be on the airport: E-Post and RE-Post. E-Posts are sensor posts with just an emitter and no receiver. They can control the aircraft but cannot detect whether the aircraft is present at the post. RE-Posts are sensor posts with an emitter and a receiver but they can detect whether the aircraft is at the post or not. The property "type" records this information. Also, there will be abstract posts which do not actually exist on the model airport but are there so that a map of the airport can be created. Overall, three posts types are there: E-Posts, RE-Posts, and No-Posts (Abstract Posts). The property "location" records where the post is. For example, a post could be named like "Backstage Entrance" or "Runway Line-Up". Every post has to be connected to the Raspberry Pi electronically through some pin, and hence the GPIO_pin property. The occupied properties help the ModelAirportGTC to be able to track the aircraft and the future state of the airport. ModelAircrafts stores information and history about the aircraft. Like it was stated before, these two different dictionaries which contain information about the airport make up the virtual image of the airport. In every state, this image gets constantly modified and then reflected onto the real model airport. A third dictionary will contain objects of the model airport which do not link to other objects such as lighting and sound. These are to be used by ModelAirportGraph.py to control devices attached to them abstractly.
 #### Pseudocode
 
-Objects within ModelAirportCheckposts:
+Data from ModelAirportCheckposts.txt:
 
 ```json
 
 {
-"location" : "Runway Line-Up",
-"next_location" : "Backstage",
-"type" : "RE Post",
-"occupied" : false,
-"will_be_occupied" : false
+   "Runway Line-Up":{
+      "Next_Location":"Backstage",
+      "Type":"RE Post",
+      "Occupied":false,
+      "Will_Be_Occupied":false
+   },
+   "Backstage Line-Up":{
+      "Next_Location":"Backstage",
+      "Type":"RE Post",
+      "Occupied":false,
+      "Will_Be_Occupied":false
+   }
 }
 
-
 ```
 
-Objects within ModelAircrafts:
+Data from ModelAircrafts.txt:
 
 ```json
 {
-"registration" : "AA2345",
-"airline" : "American Airlines",
-"aircraft" : "A330-300",
-"current_location" : "Runway Line-Up",
-"previous_location" : "Taxiway End",
-"next_location" : "Backstage",
+   "AA2345":{
+      "airline":"American Airlines",
+      "aircraft":"A330-300",
+      "current_location":"Runway Line-Up",
+      "previous_location":"Taxiway End",
+      "next_location":"Backstage"
+   },
+   "AA2545":{
+      "airline":"American Airlines",
+      "aircraft":"A330-300",
+      "current_location":"Runway Line-Up",
+      "previous_location":"Taxiway End",
+      "next_location":"Backstage"
+   }
+}
 
 ```
+
+Data from ModelAirportAccessories.txt:
+
+```json
+{
+   "Terminal-Lighting":{
+      "type":"light",
+      "description":"Lighting inside terminal",
+      "available":true,
+      "state":true
+   },
+   "Pavement-Lighting":{
+      "type":"light",
+      "description":"Lighting along runway and taxiway",
+      "available":true,
+      "state":true
+   }
+}
+
+```
+
+
 
 ```python
 
@@ -107,29 +140,13 @@ class ModelAirportGraph:
   def __init__(self)
     pass
 
-  def create_E_Post(self, postInfo):
-    # private function
-    return None
-
-  def create_RE_Post(self, postInfo):
-    # private function
-    return None
-
-  def create_No_Post(self, postInfo):
-    # private function
-    return None
-
-  def create_Graph(self, postInfo):
-    return None
-
-  def get_Aircraft_List(self, message):
+  def get_Aircraft_List(self):
     return list
 
   def get_Aircraft_Information(self, aircraft):
     return aircraft_Info
 
   def move_Aircraft(self, aircraft):
-    return None
 
   def get_AirCraft_At_Post(self, aircraft):
     return aircraft
@@ -142,12 +159,11 @@ class ModelAirportGraph:
 
   def get_Aircraft_Next_Post_Location(self, aircraft):
     return post_Info
+  
+  def set_Accessory_State(self, accessory, state):
 
-  '''
-  Add functions for airport lighting control.
-  Make sure to update this documentation.
-  '''
-
+  def get_Accessory_State(self, accessory):
+  
   def get_Status(self):
     return status
 
@@ -167,14 +183,11 @@ class ModelAirportLogger:
 
   def __init__(self, file_path)
 
-  def create_Log(self):
-    return None
+  def open_Log(self):
 
-  def append_To_Log(self, args):
-    return None
+  def append_To_Log(self, message):
 
   def close_Log(self):
-    return None
 
 ```
 
@@ -182,25 +195,27 @@ class ModelAirportLogger:
 
 #### Description
 
-Handles all GPIO operations including airport lighting. When class is called, the init() function will read in GPIO data from a text file conveniently called ModelAirportGPIO.txt with these properties for each object:
+Handles all GPIO operations including airport lighting. The class uses data from ModelAirportGPIO.txt which is formatted like this:
 
 ```json
 {
-   "RE_Sensor_1":{
-      "description":"",
-      "GPIO_pin":7
+   "Backstage":{
+      "Device":"RE_Post_3",
+      "Input_GPIO_Pin":{
+         "Pin":23,
+         "Index":3
+      },
+      "Output_GPIO_Pin":{
+         "Pin":24,
+         "Index":9
+      }
    },
-   "E_Sensor_1":{
-      "description":"",
-      "GPIO_pin":9
-   },
-   "RE_Sensor_2":{
-      "description":"",
-      "GPIO_pin":11
-   },
-   "Runway_Lighting":{
-      "description":"",
-      "GPIO_pin":17
+   "Taxiway-End":{
+      "Device":"E_Post_5",
+      "Output_GPIO_Pin":{
+         "Pin":45,
+         "Index":67
+      }
    }
 }
 
@@ -211,47 +226,35 @@ Handles all GPIO operations including airport lighting. When class is called, th
 
 class ModelAirportGPIO:
 
+  '''
+  Creates an GPIO interface so caller may access the GPIO without any knowledge of it.
+  Reads in pin data from text file and creates a dictionary. Input and output pins are
+  organized and then used to create LEDBoard and ButtonBoard instances.
+  '''
   def __init__(self):
     pass
 
-  def set_RE_Sensor_Pin(self, pin)
-    # private function
+
+  '''
+  Sets device state using the object from the passed dictionary argument.
+  To call this function, use the following example syntax:
+  
+  example.set_Device_State("Backstage" , True)
+
+  Returns nothing after called.
+  '''
+  def set_Device_State(self, object)
+
+
+  '''
+  Reads and returns the state of a device.
+  Caller Ex.:
+  
+  val = example.get_Device_State("Backstage")
+  
+  The only return values are True or False.
+  '''
+  def get_Device_State(self, object)
     return None
 
-  def set_E_Sensor_Pin(self, pin)
-    # private function
-    return None
-
-  def set_Airport_Lighting_Pin(self, pin)
-    # private function
-    return None
-
-  def set_Airport_Terminal_Lighting_Pin(self, pin)
-    #private function
-    return None
-
-  def get_RE_Sensor_State(self, state)
-    return value
-
-  def set_RE_Sensor_State(self, state)
-    return None
-
-  def set_E_Sensor_State(self, state)
-    return None
-
-  def set_Airport_Lighting_State(self, state)
-    return None
-
-  def set_Airport_Terminal_Lighting_State(self, state)
-    return None
-
-```
-
-The "state" dictionary is the argument for all functions and must have the following properties when a caller class wants to call a function:
-
-```json
-{
-   "device":"E_Sensor_1",
-   "state": true
-}
 ```
