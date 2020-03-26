@@ -11,6 +11,27 @@
 
 .header-custom{
     text-align: center;
-    font-size: 40px;
-    font-family: "Comic Sans MS";
+    font-size: 30px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.video-container{
+    padding: 30px;
+}
+
+#model-airport-rc {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 100px;
+}
+
+#auth-container-custom{
+    display: grid;
+    grid-gap: 20px;
+    padding: 10px;
 }
