@@ -1,12 +1,13 @@
 import ast
 #from gpiozero import LEDBoard, ButtonBoard
-from time import sleep
+#from time import sleep
 
 class ModelAirportGPIO:
-    def __init__(self, path):
+    def __init__(self, filepath):
         try:
-            f = open(path["filepath"], "r")
+            f = open(filepath, "r")
             s = f.read()
+            f.close()
             self.layout = ast.literal_eval(s)
             tempInputPins = []
             tempOutputPins = []
@@ -23,23 +24,26 @@ class ModelAirportGPIO:
             #self.output = LEDBoard(*outputPins)
         except:
             print("[ModelAirportGPIO] File Reading Error...")
-    def get_Device_State(self, device):
-        if device["object"] in self.layout:
-            if "Input_GPIO_Pin" in self.layout[device["object"]]:
-                print("[ModelAirportGPIO] Input Device Request Index: ", self.layout[device["object"]]["Input_GPIO_Pin"]["Index"])
-                #self.input.is_pressed(self.layout[device["object"]]["Input_GPIO_Pin"]["Index"])
-    def set_Device_State(self, device):
-        if device["object"] in self.layout:
-            if device["state"] == True:
-                if "Output_GPIO_Pin" in self.layout[device["object"]]:
-                    print("[ModelAirportGPIO] Output Device Request Index: ", self.layout[device["object"]]["Output_GPIO_Pin"]["Index"], "        State:  TRUE")
-                    #self.output.on(self.layout[device["object"]]["Output_GPIO_Pin"]["Index"])
+    def get_Device_State(self, item):
+        if item in self.layout:
+            if "Input_GPIO_Pin" in self.layout[item]:
+                print("[ModelAirportGPIO] Input Device Request Index: ", self.layout[item]["Input_GPIO_Pin"]["Index"])
+                #self.input[self.layout[item]["Input_GPIO_Pin"]["Index"]].is_pressed
+                return self.layout[item]["Input_GPIO_Pin"]["Index"]
+        print("[ModelAirportGPIO] Input Device Request Error: Device (", item,") Not Found...")
+        return -1
+    def set_Device_State(self, item, state):
+        if item in self.layout:
+            if state == True:
+                if "Output_GPIO_Pin" in self.layout[item]:
+                    print("[ModelAirportGPIO] Output Device Request Index: ", self.layout[item]["Output_GPIO_Pin"]["Index"], "        State:  TRUE")
+                    #self.output.on(self.layout[object]["Output_GPIO_Pin"]["Index"])
             else:
-                if "Output_GPIO_Pin" in self.layout[device["object"]]:
-                    print("[ModelAirportGPIO] Output Device Request Index: ", self.layout[device["object"]]["Output_GPIO_Pin"]["Index"], "        State:  FALSE")
-                    #self.output.off(self.layout[device["object"]]["Output_GPIO_Pin"]["Index"])
+                if "Output_GPIO_Pin" in self.layout[item]:
+                    print("[ModelAirportGPIO] Output Device Request Index: ", self.layout[item]["Output_GPIO_Pin"]["Index"], "        State:  FALSE")
+                    #self.output.off(self.layout[object]["Output_GPIO_Pin"]["Index"])
 
-test = ModelAirportGPIO({"filepath":"D:/Darshan/Personal/Hobbies/Model Airport/Model Airport Final/Model-Airport/Engineering/Software Engineering/Code/Raspberry Pi/model-airport/res/ModelAirportGPIO.txt"})
-test.set_Device_State({'object':'Pavement-Lighting', 'state': True})
-sleep(2)
-test.set_Device_State({'object':'Pavement-Lighting', 'state':False})
+test = ModelAirportGPIO("D:/Darshan/Personal/Hobbies/Model Airport/Model Airport Final/Model-Airport/Engineering/Software Engineering/Code/Raspberry Pi/model-airport/res/ModelAirportGPIO.txt")
+test.set_Device_State("Pavement-Lighting", True)
+test.set_Device_State("Pavement-Lighting", False)
+val = test.get_Device_State("Backstge-Exit")
