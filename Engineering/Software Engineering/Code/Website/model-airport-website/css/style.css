@@ -1,12 +1,20 @@
-.g-custom p{
+.g-custom-text p{
     text-align: center;
 }
 
-.g-custom img{
+.g-custom-img-auto img{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 75%;
+    max-width:50%;
+    height:auto;
+}
+
+.g-custom-img img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
 }
 
 .header-custom{
@@ -34,4 +42,11 @@
     display: grid;
     grid-gap: 20px;
     padding: 10px;
+}
+
+.copyright-custom{
+    font-size: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
