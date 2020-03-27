@@ -19,6 +19,10 @@
     padding-left: 5%;
 }
 
+p{
+    color: #6FC3DF;
+}
+
 .header-custom{
     text-align: center;
     font-size: 30px;
@@ -51,4 +55,36 @@
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+:root {
+    --mdc-theme-primary: #6FC3DF;
+    /*
+    --mdc-theme-secondary: #6FC3DF;
+    --mdc-theme-on-primary: #6FC3DF;
+    --mdc-theme-on-secondary: #6FC3DF;
+    --mdc-theme-background: #6FC3DF;
+    --mdc-theme-surface: #6FC3DF;
+    --mdc-theme-text-primary-on-light: #6FC3DF;
+    --mdc-theme-text-primary-on-dark: #6FC3DF;
+    --mdc-theme-text-secondary-on-light: #6FC3DF;
+    --mdc-theme-text-secondary-on-dark: #6FC3DF;
+    --mdc-theme-text-hint-on-light: #6FC3DF;
+    --mdc-theme-text-hint-on-dark: #6FC3DF;
+    --mdc-theme-text-disabled-on-light: #6FC3DF;
+    --mdc-theme-text-disabled-on-dark: #6FC3DF;
+    --mdc-theme-text-icon-on-light: #6FC3DF;
+    --mdc-theme-text-icon-on-dark: #6FC3DF;
+   */
+}
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label{
+    color: #6FC3DF;
+}
+
+.mdc-tab .mdc-tab__text-label{
+    color: #6FC3DF;
+}
+
+html{
+    background-color: #0C141F;
 }
