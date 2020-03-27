@@ -2,6 +2,11 @@
     text-align: center;
 }
 
+.g-custom-text-small p{
+    text-align: center;
+    font-size: 15px;
+}
+
 .g-custom-img-auto img{
     display: block;
     margin-left: auto;
