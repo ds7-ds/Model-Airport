@@ -71,7 +71,7 @@
       * Document important project information
       * Invite members to project
 
-1. ### Phase 3 - Unfinished Structural Completion
+1. ### Phase 3 - Backstage
    * Group Members
       * Darshan Shet
    * Structural Engineering
@@ -83,7 +83,7 @@
    * Electrical Engineering
       * Check documentation for future reference-ability
    * Software Engineering
-      * Continue with Phase 2 goals if not yet completed
+      * Check documentation for future reference-ability
    * Finance
       * Update Inventory sheets
       * Update Budget sheet
