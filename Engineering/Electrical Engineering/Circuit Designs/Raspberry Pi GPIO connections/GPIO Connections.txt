@@ -1,0 +1,12 @@
+$ 1 0.000005 10.20027730826997 50 5 43
+! default 0 17,27,22 23,24,25,4 Raspberry\sPi \0
+208 256 176 320 176 0 default 0 0 0 0
+x 239 128 377 131 4 24 Raspberry\sPi
+x 121 180 193 183 4 16 RE-Post\s1
+x 122 215 194 218 4 16 RE-Post\s2
+x 123 247 244 250 4 16 Start/Stop\sButton
+x 383 182 455 185 4 16 RE-Post\s1
+x 382 214 454 217 4 16 RE-Post\s2
+x 381 245 442 248 4 16 E-Post\s1
+x 380 277 512 280 4 16 Pavement\sLighting
+x 109 366 324 369 4 12 Note:\sInputs\son\sleft\sside,\soutputs\son\sright
