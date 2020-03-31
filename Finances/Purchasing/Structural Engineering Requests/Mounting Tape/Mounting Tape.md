@@ -48,4 +48,4 @@ Option 2 is cheaper. No significant differences were observed between the two op
 
 ## Status of Approval
 
-> Pending.
+> Denied. Not possible with current travel restrictions in place.
