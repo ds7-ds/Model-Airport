@@ -1,6 +1,6 @@
 # Model Airport Phases
 
-1. ### Phase 1 - Basic Model Airport (12/25/2019 - Expected 
+## Phase 1 - Basic Model Airport (12/25/2019 - Expected 
    * Group Members
       * DarshanShet777
    * Structural Engineering
@@ -25,7 +25,7 @@
       * Document important project information
       * Invite members to project
 
-1. ### Phase 2 - Initial Hardware/Software
+## Phase 2 - Initial Hardware/Software
    * Group Members
       * DarshanShet777
       * NP
@@ -55,12 +55,15 @@
       * Research languages and document on GitHub
       * Create Website
          * Create template website with animation of airport
-         * Create airport controller with webcam support on another website
+         * Host website on GitHub for now
       * Choose language (Java, Node.js, Python) for
          * Airport Controller
          * Airport Logger
          * Airport AJAX to AWS/Heroku servers
          * Webcam
+      * Create model airport software
+         * Automatic control for now
+         * Create tests to ensure safe operation
       * Ultimate goal: templated design
    * Finance
       * Update Inventory sheets
@@ -71,13 +74,14 @@
       * Document important project information
       * Invite members to project
 
-1. ### Phase 3 - Backstage
+## Phase 3 - Backstage
    * Group Members
       * Darshan Shet
    * Structural Engineering
       * Foundation 2 without lighting
       * Surface without scenery
       * Build Backstage with space for electronics
+      * Build improvements to airport if necessary
    * Mechanical Engineering
       * None
    * Electrical Engineering
