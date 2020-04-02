@@ -12,7 +12,7 @@
       * Completed robot design
       * Check with EE/ME Advisor for robot approval
    * Electrical Engineering
-      * Power robot with batteries with no extra electronics
+      * Power robot with just batteries with no extra electronics
       * No lighting for airport.
    * Software Engineering
       * None in this phase
@@ -65,6 +65,7 @@
          * Automatic control for now
          * Create tests to ensure safe operation
       * Ultimate goal: templated design
+      * No server for this project
    * Finance
       * Update Inventory sheets
       * Update Budget sheet
@@ -95,3 +96,29 @@
    * Resources
       * Document important project information
       * Invite members to project
+
+## Phase 4 - Server
+   * Group Members
+      * Darshan Shet
+   * Structural Engineering
+      * None
+   * Mechanical Engineering
+      * None
+   * Electrical Engineering
+      * None
+   * Software Engineering
+      * Build server using Heroku
+         * Setup work enviroment
+         * Create Node Express App
+         * Deploy app to Heroku
+      * Test server
+         * Test app using multiple devices
+         * Hack app if possible
+         * Fix errors/ loopholes present
+   * Finance
+      * None
+   * Resources
+      * Document important project information
+      * Invite members to project
+
+## Phase 5 - Add-Ons
