@@ -24,6 +24,8 @@
 
 1. Test circuit by flashing photodiode on and off. Circuit should work as planned.
 
+1. Check voltage and current of different states of battery pack. Record those voltages and currents.
+
 1. Check voltage and current of different states of motor. Record those voltages and currents.
 
 1. Check voltage and current of different states of R2. Record those voltages and currents.
@@ -40,7 +42,7 @@
 
 | - | Voltage \(V\) | Current \(mA\) | Resistance \(ohms\) |
 | :---: | :---: | :---: | :---: |
-| Battery Pack | 5.94V | - | - |
+| Battery Pack | 5.94 (\No load\), 5.72 \(Motor off\), 5.82 \(Motor on\)| 5 mA \(Motor off\), 150 mA \(Motor no load peak on\), 55 mA \(Motor no load normal on\) | - |
 | R1 | - | - | 990 |
 | R2 | 5.06 \(Motor on\), 5.22 \(Motor off\) | 5.06 \(Motor on\), 5.72 \(Motor off\) | 10.49 K |
 | Motor | 5.78 | 45 \(No load\), 50 \(Load\) | - |
