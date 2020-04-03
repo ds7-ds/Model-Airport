@@ -42,7 +42,7 @@
 
 | - | Voltage \(V\) | Current \(mA\) | Resistance \(ohms\) |
 | :---: | :---: | :---: | :---: |
-| Battery Pack | 5.94 (\No load\), 5.72 \(Motor off\), 5.82 \(Motor on\)| 5 mA \(Motor off\), 150 mA \(Motor no load peak on\), 55 mA \(Motor no load normal on\) | - |
+| Battery Pack | 5.94 (\No load\), 5.72 \(Motor off\), 5.82 \(Motor on\)| 5 \(Motor off\), 150 \(Motor no load peak on\), 55 \(Motor no load normal on\) | - |
 | R1 | - | - | 990 |
 | R2 | 5.06 \(Motor on\), 5.22 \(Motor off\) | 5.06 \(Motor on\), 5.72 \(Motor off\) | 10.49 K |
 | Motor | 5.78 | 45 \(No load\), 50 \(Load\) | - |
