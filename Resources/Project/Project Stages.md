@@ -4,16 +4,15 @@
    * Group Members
       * DarshanShet777
    * Structural Engineering
-      * Foundation 1
-      * Columns
-      * Foundation 2 without lighting
-      * Surface without scenery
+      * Build Foundation 1
+      * Build Columns
+      * Build Foundation 2 without lighting
+      * Build Surface without scenery
    * Mechanical Engineering
       * Completed robot design
       * Check with EE/ME Advisor for robot approval
    * Electrical Engineering
-      * Power robot with just batteries with no extra electronics
-      * No lighting for airport.
+      * Plan and power robot with just batteries with no extra electronics
    * Software Engineering
       * None in this phase
    * Finance
@@ -29,43 +28,44 @@
    * Group Members
       * DarshanShet777
       * NP
-      * SF
       * EE/ME Advisor
       * ME Advisor
       * ME Advisor 2
    * Structural Engineering
-      * Plan and build IR post sensor location and wiring
+      * Plan and build IR checkposts location and wiring
    * Mechanical Engineering
       * Adjust robot design as needed if electronics installment poses a challenge
    * Electrical Engineering
       * Robot
-         * Plan sensors for robot
+         * Plan IR sensor installment
          * Plan logic for robot (Microcontrollers, 555 Timer etc.)
          * Plan motor driver
          * Plan batteries and battery configuration for robot
+         * Build robot electronics onto robot
       * Airport Sensors
          * Plan sensors for robot tracking
-      * No lighting for airport
       * Raspberry Pi addition
          * Explore features available
          * Understand GPIO and Python/Node.js
-      * Build robot electronics onto robot
-      * Build IR posts for Foundation 1
    * Software Engineering
-      * Research languages and document on GitHub
+      * Research languages and tools
+         * Understand every language strong/weak points
+         * Predict which language to use for different airport software and airport website
+         * Research different server hosting services and choose best one
       * Create Website
          * Create template website with animation of airport
+            * Video tab with content
+            * Info tab with content
+            * RC tab with content \(Contains airport controller\)
          * Host website on GitHub for now
-      * Choose language (Java, Node.js, Python) for
-         * Airport Controller
-         * Airport Logger
-         * Airport AJAX to AWS/Heroku servers
-         * Webcam
       * Create model airport software
+         * Programs to create
+            * Create GPIO code for controlling airport
+            * Create virtual graph code to create an image of the airport so it could be applied using GPIO
+            * Create "state machine" like code which allows changing between states of the model airport
+            * Create a connector code which connects the model airport to the server \(Connection to server not required\)
          * Automatic control for now
          * Create tests to ensure safe operation
-      * Ultimate goal: templated design
-      * No server for this project
    * Finance
       * Update Inventory sheets
       * Update Budget sheet
@@ -107,10 +107,12 @@
    * Electrical Engineering
       * None
    * Software Engineering
-      * Build server using Heroku
+      * Build server using best option chosen in last phase
          * Setup work enviroment
-         * Create Node Express App
-         * Deploy app to Heroku
+         * Create Node Express app
+         * Import template website code from last phase
+         * Deploy app to the server
+         * Polish changes to server and website to ensure clean operation
       * Test server
          * Test app using multiple devices
          * Hack app if possible
@@ -122,3 +124,4 @@
       * Invite members to project
 
 ## Phase 5 - Add-Ons
+   * TBD
