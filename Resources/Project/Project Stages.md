@@ -1,6 +1,6 @@
 # Model Airport Phases
 
-## Phase 1 - Basic Model Airport (12/25/2019 - Expected 
+## Phase 1 - Basic Model Airport \(Synchronized Step 1\)
    * Group Members
       * DarshanShet777
    * Structural Engineering
@@ -24,7 +24,7 @@
       * Document important project information
       * Invite members to project
 
-## Phase 2 - Initial Hardware/Software
+## Phase 2 - Initial Hardware/Software \(Synchronized Step 2\)
    * Group Members
       * DarshanShet777
       * NP
@@ -75,7 +75,7 @@
       * Document important project information
       * Invite members to project
 
-## Phase 3 - Backstage
+## Phase 3 - Backstage \(Synchronized Step 3\)
    * Group Members
       * Darshan Shet
    * Structural Engineering
@@ -97,7 +97,7 @@
       * Document important project information
       * Invite members to project
 
-## Phase 4 - Server
+## Phase 4 - Server \(Asynchronized\)
    * Group Members
       * Darshan Shet
    * Structural Engineering
@@ -123,5 +123,5 @@
       * Document important project information
       * Invite members to project
 
-## Phase 5 - Add-Ons
+## Phase 5 - Add-Ons \(Synchronized Step 4\)
    * TBD
