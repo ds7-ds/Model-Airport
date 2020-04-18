@@ -1,13 +1,24 @@
-.g-custom-text p{
-    text-align: center;
+.model-airport-app{
+    background-color: #0C141F;
 }
 
-.g-custom-text-small p{
+.model-airport-video-container{
+    padding: 30px;
+}
+
+.model-airport-grid-text-medium p{
+    text-align: center;
+    font-size: 30px;
+    color: #6FC3DF;
+}
+
+.model-airport-grid-text-small p{
     text-align: center;
     font-size: 15px;
+    color: #6FC3DF;
 }
 
-.g-custom-img-auto img{
+.model-airport-grid-visual-small img{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -15,7 +26,7 @@
     height:auto;
 }
 
-.g-custom-img img{
+.model-airport-grid-visual-full img{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -24,52 +35,62 @@
     padding-left: 5%;
 }
 
-p{
-    color: #6FC3DF;
-}
-
-.header-custom{
+.model-airport-section-header p{
     text-align: center;
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
+    color: #6FC3DF;
 }
 
-.video-container{
-    padding: 30px;
-}
-
-#model-airport-rc {
+.model-airport-rc{
     position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 200px;
-    height: 100px;
-}
-
-#auth-container-custom{
-    display: grid;
-    grid-gap: 20px;
-    padding: 10px;
-}
-
-.copyright-custom{
-    font-size: 15px;
-    position: relative;
+    top: 49px;
     bottom: 0;
     width: 100%;
 }
 
-.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label{
+.model-airport-external-website{
+    width: 100%;
+    height: 100%;
+}
+
+.model-airport-copyright{
+    font-size: 15px;
+    position: relative;
+    bottom: 0;
     color: #6FC3DF;
 }
 
-.mdc-tab .mdc-tab__text-label{
-    color: #6FC3DF;
+
+
+
+
+
+.model-airport-section-form{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-html{
-    background-color: #0C141F;
+.model-airport-section-form-text-field {
+    margin: auto;
+    padding: 5px;
+}
+
+.model-airport-section-form-button{
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+
+
+
+.model-airport-section-webcam{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

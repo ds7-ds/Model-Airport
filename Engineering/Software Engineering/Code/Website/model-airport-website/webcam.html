@@ -1,0 +1,28 @@
+<html class="model-airport-sub-app">
+    <head class="model-airport-page-resources">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body class="model-airport-page">
+        <div class="model-airport-section-webcam">
+            <iframe height="240" width="320" src="img/WebcamFiller.jpg"></iframe>
+        </div>
+        <script>
+            window.mdc.autoInit();
+            $(document).ready(function () {
+                $('#submitbutton').click(function () {
+                    /*
+                        TODO: AJAX request to server
+                     */
+
+                    //Clear command text field for new command inputs
+                    $('#commandtextfield').val('');
+                });
+            });
+        </script>
+    </body>
+</html>

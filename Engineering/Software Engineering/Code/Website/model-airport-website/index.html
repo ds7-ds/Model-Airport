@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
+<html class="model-airport-app">
+    <head class="model-airport-page-resources">
+        <title>Model Airport</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--
         <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
         -->
-        <link href="css/material-components-web.min.css" rel="stylesheet">
+        <link href="css/material-components-web.min.css" rel="stylesheet" type="text/css">
         <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
         <!--[if lte IE 8]>
@@ -20,152 +20,133 @@
         <script src="js/jquery.fitvids.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
-    <body>
-        <div id="model-airport-app">
-            <div id="model-airport-topbar">
-                <div class="mdc-tab-bar" role="tablist" data-mdc-auto-init="MDCTabBar">
-                    <div class="mdc-tab-scroller">
-                        <div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
-                            <div class="mdc-tab-scroller__scroll-content">
-
-                                <button class="mdc-tab  mdc-tab--active" role="tab" aria-selected="true" tabindex="0" id="mdc-tab-1">
-                                    <span class="mdc-tab__content">
-                                        <span class="mdc-tab__text-label">Video</span>
-                                    </span>
-                                    <span class="mdc-tab-indicator  mdc-tab-indicator--active">
-                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span>
-                                    </span>
-                                    <span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:142px; --mdc-ripple-fg-scale:1.78141; --mdc-ripple-fg-translate-start:93.5px, -42px; --mdc-ripple-fg-translate-end:48.0859px, -47px;"></span>
-                                </button>
-
-                                <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-2">
-                                    <span class="mdc-tab__content">
-                                        <span class="mdc-tab__text-label">Info</span>
-                                    </span>
-                                    <span class="mdc-tab-indicator">
-                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span>
-                                    </span>
-                                    <span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:182px; --mdc-ripple-fg-scale:1.7458; --mdc-ripple-fg-translate-start:97.3281px, -63px; --mdc-ripple-fg-translate-end:60.9844px, -67px;"></span>
-                                </button>
-
-                                <button class="mdc-tab" role="tab" aria-selected="true" tabindex="-1" id="mdc-tab-3">
-                                    <span class="mdc-tab__content">
-                                        <span class="mdc-tab__text-label">RC</span>
-                                    </span>
-                                    <span class="mdc-tab-indicator">
-                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span>
-                                    </span>
-                                    <span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:161px; --mdc-ripple-fg-scale:1.76466; --mdc-ripple-fg-translate-start:38.8594px, -52.5px; --mdc-ripple-fg-translate-end:54.4375px, -56.5px;"></span>
-                                </button>
-
-                            </div>
+    <body class="model-airport-page">
+        <div class="model-airport-top-bar">
+            <div class="mdc-tab-bar" role="tablist" data-mdc-auto-init="MDCTabBar">
+                <div class="mdc-tab-scroller">
+                    <div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
+                        <div class="mdc-tab-scroller__scroll-content">
+                            <button class="mdc-tab  mdc-tab--active" role="tab" aria-selected="true" tabindex="0" id="mdc-tab-1">
+                                <span class="mdc-tab__content">
+                                    <span class="mdc-tab__text-label">Video</span>
+                                </span>
+                                <span class="mdc-tab-indicator  mdc-tab-indicator--active">
+                                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span>
+                                </span>
+                                <span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:142px; --mdc-ripple-fg-scale:1.78141; --mdc-ripple-fg-translate-start:93.5px, -42px; --mdc-ripple-fg-translate-end:48.0859px, -47px;"></span>
+                            </button>
+                            <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-2">
+                                <span class="mdc-tab__content">
+                                    <span class="mdc-tab__text-label">Info</span>
+                                </span>
+                                <span class="mdc-tab-indicator">
+                                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span>
+                                </span>
+                                <span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:182px; --mdc-ripple-fg-scale:1.7458; --mdc-ripple-fg-translate-start:97.3281px, -63px; --mdc-ripple-fg-translate-end:60.9844px, -67px;"></span>
+                            </button>
+                            <button class="mdc-tab" role="tab" aria-selected="true" tabindex="-1" id="mdc-tab-3">
+                                <span class="mdc-tab__content">
+                                    <span class="mdc-tab__text-label">RC</span>
+                                </span>
+                                <span class="mdc-tab-indicator">
+                                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span>
+                                </span>
+                                <span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:161px; --mdc-ripple-fg-scale:1.76466; --mdc-ripple-fg-translate-start:38.8594px, -52.5px; --mdc-ripple-fg-translate-end:54.4375px, -56.5px;"></span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="model-airport-content">
-                <div id="model-airport-video">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/9WL-sbFfE3E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="model-airport-content">
+            <div class="model-airport-video">
+                <div class="model-airport-video-container">
+                    <iframe src="https://www.youtube.com/embed/9WL-sbFfE3E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="model-airport-info">
+                <div class="model-airport-section-header">
+                    <p>Facts and Figures</p>
+                </div>
+                <div class="pure-g model-airport-grid-visual-small model-airport-grid-text-small">
+                    <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5 pure-u-lg-1-8">
+                        <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
+                        <p>Star Alliance</p>
+                    </div>
+                    <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5  pure-u-lg-1-8">
+                        <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
+                        <p>Star Alliance</p>
+                    </div>
+                    <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5  pure-u-lg-1-8">
+                        <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
+                        <p>Star Alliance</p>
+                    </div>
+                    <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5  pure-u-lg-1-8">
+                        <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
+                        <p>Star Alliance</p>
+                    </div>
+                    <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5  pure-u-lg-1-8">
+                        <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
+                        <p>Star Alliance</p>
+                    </div>
+                    <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5  pure-u-lg-1-8">
+                        <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
+                        <p>Star Alliance</p>
+                    </div>
+                    <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5  pure-u-lg-1-8">
+                        <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
+                        <p>Star Alliance</p>
+                    </div>
+                    <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5  pure-u-lg-1-8">
+                        <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
+                        <p>Star Alliance</p>
                     </div>
                 </div>
-                <div id="model-airport-info">
-                    <div class="header-custom">
-                        <p>Facts and Figures</p>
+                <div class="model-airport-section-header">
+                    <p>Photo Gallery</p>
+                </div>
+                <div class="pure-g model-airport-grid-visual-full model-airport-grid-text-small">
+                    <div class="pure-u-1">
+                        <img class="pure-img-responsive" src="img/Model%20Airport%20Example.jpg" alt="Star Alliance">
+                        <p>Star Alliance</p>
                     </div>
-                    <div class="pure-g g-custom-text g-custom-img-auto">
-                        <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5 pure-u-lg-1-8">
-                            <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
-                            <p>Star Alliance</p>
-                        </div>
-                        <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5  pure-u-lg-1-8">
-                            <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
-                            <p>Star Alliance</p>
-                        </div>
-                        <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5  pure-u-lg-1-8">
-                            <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
-                            <p>Star Alliance</p>
-                        </div>
-                        <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5  pure-u-lg-1-8">
-                            <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
-                            <p>Star Alliance</p>
-                        </div>
-                        <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5  pure-u-lg-1-8">
-                            <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
-                            <p>Star Alliance</p>
-                        </div>
-                        <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5  pure-u-lg-1-8">
-                            <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
-                            <p>Star Alliance</p>
-                        </div>
-                        <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5  pure-u-lg-1-8">
-                            <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
-                            <p>Star Alliance</p>
-                        </div>
-                        <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-5  pure-u-lg-1-8">
-                            <img class="pure-img-responsive" src="img/Star%20Alliance.png" alt="Star Alliance">
-                            <p>Star Alliance</p>
-                        </div>
-                    </div>
-                    <div class="header-custom">
-                        <p>Photo Gallery</p>
-                    </div>
-                    <div class="pure-g g-custom-text-small g-custom-img">
-                        <div class="pure-u-1">
-                            <img class="pure-img-responsive" src="img/Model%20Airport%20Example.jpg" alt="Star Alliance">
-                            <p>Star Alliance</p>
-                        </div>
-                        <div class="pure-u-1">
-                            <img class="pure-img-responsive" src="img/Model%20Airport%20Example.jpg" alt="Star Alliance">
-                            <p>Star Alliance</p>
-                        </div>
-                    </div>
-                    <div class="copyright-custom">
-                        <p>&copy; All rights reserved by aitch tee (Flickr.com)</p>
+                    <div class="pure-u-1">
+                        <img class="pure-img-responsive" src="img/Model%20Airport%20Example.jpg" alt="Star Alliance">
+                        <p>Star Alliance</p>
                     </div>
                 </div>
-                <div id="model-airport-rc">
-                    <div id="auth-container-custom">
-                        <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
-                            <input class="mdc-text-field__input" id="text-field-hero-input">
-                            <div class="mdc-line-ripple"></div>
-                            <label for="text-field-hero-input" class="mdc-floating-label">Username</label>
-                        </div>
-                        <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
-                            <input class="mdc-text-field__input" id="text-field-hero-input">
-                            <div class="mdc-line-ripple"></div>
-                            <label for="text-field-hero-input" class="mdc-floating-label">Password</label>
-                        </div>
-                        <button class="mdc-button mdc-button--outlined"><span class="mdc-button__ripple"></span>Submit</button>
-                    </div>
+                <div class="model-airport-copyright">
+                    <p>&copy; All rights reserved by aitch tee (Flickr.com)</p>
                 </div>
+            </div>
+            <div class="model-airport-rc">
+                <iframe class="model-airport-external-website" src="login.html" frameborder="0"></iframe>
             </div>
         </div>
         <script>
             window.mdc.autoInit();
 
             $(document).ready(function(){
-                $(".video-container").fitVids();
-                $("#model-airport-video").show();
-                $("#model-airport-info").hide();
-                $("#model-airport-rc").hide();
+                $(".model-airport-video-container").fitVids();
+                $(".model-airport-video").show();
+                $(".model-airport-info").hide();
+                $(".model-airport-rc").hide();
                 $("#mdc-tab-1").click(function(){
-                    $("#model-airport-video").show();
-                    $("#model-airport-info").hide();
-                    $("#model-airport-rc").hide();
+                    $(".model-airport-video").show();
+                    $(".model-airport-info").hide();
+                    $(".model-airport-rc").hide();
                 });
                 $("#mdc-tab-2").click(function(){
-                    $("#model-airport-video").hide();
-                    $("#model-airport-info").show();
-                    $("#model-airport-rc").hide();
+                    $(".model-airport-video").hide();
+                    $(".model-airport-info").show();
+                    $(".model-airport-rc").hide();
                 });
                 $("#mdc-tab-3").click(function(){
-                    $("#model-airport-video").hide();
-                    $("#model-airport-info").hide();
-                    $("#model-airport-rc").show();
+                    $(".model-airport-video").hide();
+                    $(".model-airport-info").hide();
+                    $(".model-airport-rc").show();
                 });
             });
-
         </script>
         <noscript>JavaScript required!</noscript>
     </body>
