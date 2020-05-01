@@ -88,9 +88,71 @@
 
 
 
-.model-airport-section-webcam{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+@media screen and (min-height: 450px){
+    .model-airport-rc-webcam-interactive{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .model-airport-rc-section-webcam{
+        margin-bottom: 60px;
+    }
+
+    .model-airport-rc-section-form{
+    }
+
+    .model-airport-rc-section-form-text-field{
+        text-align: center;
+    }
+
+    .model-airport-rc-section-form-text-field label{
+        width:100%;
+    }
+
+    .model-airport-rc-section-form-text-field #pilot-response{
+        margin-bottom: 10px;
+    }
+
+    .model-airport-rc-section-form-button{
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-height: 450px){
+    .model-airport-rc-webcam-interactive{
+
+    }
+
+    .model-airport-rc-section-webcam{
+        margin-bottom: 20px;
+        width: 320px;
+        height: 240px;
+        float: left;
+    }
+
+    .model-airport-rc-section-form{
+        width: auto;
+        margin-left: 330px;
+    }
+
+    .model-airport-rc-section-form-text-field{
+        text-align: center;
+    }
+
+    .model-airport-rc-section-form-text-field #pilot-response{
+        margin-bottom: 30px;
+    }
+
+    .model-airport-rc-section-form-text-field label{
+        width:100%;
+    }
+
+    .model-airport-rc-section-form-button{
+        text-align: center;
+        margin-top: 10px;
+    }
 }

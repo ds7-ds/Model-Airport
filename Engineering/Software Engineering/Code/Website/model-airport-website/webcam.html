@@ -8,8 +8,34 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body class="model-airport-page">
-        <div class="model-airport-section-webcam">
-            <iframe height="240" width="320" src="img/WebcamFiller.jpg"></iframe>
+        <div class="model-airport-rc-webcam-interactive">
+            <div class="model-airport-rc-section-webcam">
+                <iframe height="240" width="320" src="img/WebcamFiller.jpg"></iframe>
+            </div>
+            <div class="model-airport-rc-section-form">
+                <div class="model-airport-rc-section-form-text-field">
+                    <label class="mdc-text-field" id="pilot-response" data-mdc-auto-init="MDCTextField">
+                        <div class="mdc-text-field__ripple"></div>
+                        <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" maxlength="32" disabled>
+                        <span class="mdc-floating-label" id="pilot-response-message">Pilot Response</span>
+                        <div class="mdc-line-ripple"></div>
+                    </label>
+                </div>
+                <div class="model-airport-rc-section-form-text-field">
+                    <label class="mdc-text-field" id="gtc-request" data-mdc-auto-init="MDCTextField">
+                        <div class="mdc-text-field__ripple"></div>
+                        <input class="mdc-text-field__input" id="gtc-request-input" type="text" aria-labelledby="my-label-id" maxlength="32">
+                        <span class="mdc-floating-label" id="gtc-request-hint">Ground Traffic Control Command</span>
+                        <div class="mdc-line-ripple"></div>
+                    </label>
+                </div>
+                <div class="model-airport-rc-section-form-button">
+                    <button class="demo-button mdc-button mdc-button--unelevated demo-button-shaped mdc-ripple-upgraded" data-mdc-auto-init="MDCRipple">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">Command Pilot</span>
+                    </button>
+                </div>
+            </div>
         </div>
         <script>
             window.mdc.autoInit();
