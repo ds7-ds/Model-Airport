@@ -123,5 +123,23 @@
       * Document important project information
       * Invite members to project
 
-## Phase 5 - Add-Ons \(Synchronized Step 4\)
-   * TBD
+## Phase 5 - Add-Ons\(Asynchronized\)
+   * Group Members
+      * Darshan Shet
+   * Structural Engineering
+      * None
+   * Mechanical Engineering
+      * None
+   * Electrical Engineering
+      * None
+   * Software Engineering
+      * Webcam
+         * Find webcam devices or software so website may access it
+         * Understand webcam tool so it may be used correctly
+         * Create sustainable connections every time
+         * Test webcam tool through multiple volunteers
+   * Finance
+      * None
+   * Resources
+      * Document important project information
+      * Invite members to project
