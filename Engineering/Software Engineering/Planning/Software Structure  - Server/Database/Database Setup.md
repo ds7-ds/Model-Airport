@@ -15,18 +15,18 @@
 | Field | Type | Not Null | Key | Notes |
 | :---: | :---: | :---: | :---: | :---: |
 | id | Serial | - | - | - |
-| command | varchar(70) | Yes | Primary | - |
+| command | text | Yes | Primary | - |
 | sent | boolean | Yes | - | - |
-| airport_id | varchar(70) | Yes | Foreign to airports.airportID| - |
+| airport_id | text | Yes | Foreign to airports.name| - |
 
 ### responses
 
 | Field | Type | Not Null | Key | Notes |
 | :---: | :---: | :---: | :---: | :---: |
 | id | Serial | - | - | - |
-| response | varchar(70) | Yes | Primary | - |
+| response | text | Yes | Primary | - |
 | sent | boolean | Yes | - | - |
-| command_id | varchar(70) | Yes | Foreign to requests.gtcCommandID | - |
+| command_id | text | Yes | Foreign to requests.command | - |
 
 ## Notes
 
