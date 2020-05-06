@@ -10,7 +10,7 @@ ConnectATC is the bridge between the actual software that controls the model air
 
 ```python
 
-'''
+"""
 
 1. When spawned, sends a success message to ModelAirport.js process that the program itself is running.
 
@@ -25,7 +25,7 @@ ConnectATC is the bridge between the actual software that controls the model air
 6. Repeat Step 4 and 5 until the model airport time limit is reached. If time limit is reached, call the end(). Also, send a end request to the caller program ModelAirport.js.
 
 
-'''
+"""
 
 ```
 
@@ -162,8 +162,10 @@ class ModelAirportImager:
     return post_Info
   
   def set_Accessory_State(self, accessory, state):
+    return None
 
   def get_Accessory_State(self, accessory):
+    return state
   
   def get_Status(self):
     return status
@@ -227,34 +229,34 @@ Handles all GPIO operations including airport lighting. The class uses data from
 
 class ModelAirportGPIO:
 
-  '''
+  """
   Creates an GPIO interface so caller may access the GPIO without any knowledge of it.
   Reads in pin data from text file and creates a dictionary. Input and output pins are
   organized and then used to create LEDBoard and ButtonBoard instances.
-  '''
+  """
   def __init__(self):
     pass
 
 
-  '''
+  """
   Sets device state using the object from the passed dictionary argument.
   To call this function, use the following example syntax:
   
   example.set_Device_State("Backstage" , True)
 
   Returns nothing after called.
-  '''
+  """
   def set_Device_State(self, object)
+    return None
 
-
-  '''
+  """
   Reads and returns the state of a device.
-  Caller Ex.:
+  Caller example:
   
   val = example.get_Device_State("Backstage")
   
   The only return values are True or False.
-  '''
+  """
   def get_Device_State(self, object)
     return None
 
