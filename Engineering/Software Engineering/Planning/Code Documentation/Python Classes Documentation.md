@@ -1,10 +1,10 @@
 # Python Files Documentation
 
-## ConnectGTC.py
+## ConnectATC.py
 
 #### Description
 
-ConnectGTC can be considered as the main program which calls ModelAirportGTC. It runs the airport like a CEO. The python program itself is actually spawned by ModelAirport.js. See the UML to get a better understanding of how all programs are connected. In operation, unless ConnectGTC does not receive a command from the user in certain amount of time, the airport runs itself automatically by calling next() repeatedly. If a command is received, the airport invokes the next(**command) and gives the user the ability to run the airport. Before each call to next() or next(**command), status() must be called. The status() function returns the state of the airport and its operability. If the status of the airport is bad (malfunctiong, glitches, etc.), none of the next functions should be called. ConnectGTC also sends messages to the calling program ModelAirport about the airport status and other requested information such as aircraft information or lighting state.
+ConnectATC is the bridge between the actual software that controls the model airport (ModelATC) and the software that connects to the user via server (Heroku, AWS, RedHat). Please see the overall software UML to get a clear idea on how and what ConnectATC.py does visually. The program itself is spawned by ModelAirport.js instance. In operation, unless the ConnectATC program does not receive a command from the user in certain amount of time, the airport runs itself automatically by calling next() repeatedly. If a command is received, the airport invokes the next(command) and gives the user the ability to command the airport for that moment. If the next(command) was unsuccessful in doing because the ModelAirportATC was unavailable to do so, the next(command) will be called repeatedly until its accomplished. Before each call to next() or next(**command), status() must be called. The status() function returns the state of the airport and its operability. ConnectATC also sends these messages to ModelAirport.js instance if in case the node process requests it.
 
 #### Pseudocode
 
@@ -12,28 +12,28 @@ ConnectGTC can be considered as the main program which calls ModelAirportGTC. It
 
 '''
 
-1. When spawned, sends a success message to ModelAirport.js that the program itself is running.
+1. When spawned, sends a success message to ModelAirport.js process that the program itself is running.
 
-2. Creates an instance of ModelAirportGTC and this starts the model airport.
+2. Creates an instance of ModelAirportATC and this starts the model airport.
 
-3. Waits for ModelAirportGTC instance to setup completely. Robot must be aligned with sensors before operations (next()/next(command)) can begin.
+3. Waits for ModelAirportATC instance to setup completely. Robot must be aligned with sensors before operations (next()/next(command)) can begin.
 
-4. Once setup is complete, if no user input is available for x amount of time, airport runs automatically through next() function. If user input is detected, then error checking is done. When verified, the next(command) is called.
+4. Once setup is complete, if no user input is available for x amount of time, airport runs automatically through next() function. If user input is detected, then error checking is done. When verified, the next(command) is called. If next(command) did not successfully happen, it gets repeatedly called until it is successful.
 
-4. If the client wants a model airport status, then just call status() and pass the information to ModelAirport.js to send it to the client.
+5. If the client wants a model airport status, then just call status() and pass the information to ModelAirport.js to send it to the client.
 
-5. Repeat Step 4 and 5 until the model airport time limit is reached. If time limit is reached, call the end(). Also, send a end request to the caller program ModelAirport.js.
+6. Repeat Step 4 and 5 until the model airport time limit is reached. If time limit is reached, call the end(). Also, send a end request to the caller program ModelAirport.js.
 
 
 '''
 
 ```
 
-## ModelAirportGTC.py
+## ModelAirportATC.py
 
 #### Description
 
-This program provides GTC operations for ConnectGTC to run the airport in a state by state fashion similar to how debuggers run. There are no time-consuming while loops in any functions and should mostly consist of nested if statements that contain the airport logic. Of course, error checking is done to prevent human input errors from causing a catastrophe.
+This program provides ATC operations for ConnectATC instance to run the airport in a state by state fashion. There are no time-consuming while loops in any functions and should mostly consist of nested if statements that contain the airport logic.
 
 #### Pseudocode
 
@@ -48,10 +48,10 @@ class ModelAirportGTC:
     return None
 
   def next(self):
-    return None
+    return hasPerformed # returns -1 for error, 0 for unsuccessful, and 1 for successful
 
   def next(self, command):
-    return None
+    return hasPerformed # returns -1 for error, 0 for unsuccessful, and 1 for successful
 
   def status(self):
     return airportStatus
@@ -61,11 +61,12 @@ class ModelAirportGTC:
 
 ```
 
-## ModelAirportGraph.py
+## ModelAirportImager.py
 
 #### Description
 
-ModelAirportGraph's main job is to create an image of the airport and also use ModelAirportGPIO to output the image. ModelAirportGraph class will store that image using two dictionaries. The first dictionary is called ModelAirportCheckposts. ModelAirportCheckposts stores a graph of all the sensor posts on the model airport. The posts act as a checkpoint for all aircraft. Planes go from one post to another in most states. Two different sensor posts will be on the airport: E-Post and RE-Post. E-Posts are sensor posts with just an emitter and no receiver. They can control the aircraft but cannot detect whether the aircraft is present at the post. RE-Posts are sensor posts with an emitter and a receiver but they can detect whether the aircraft is at the post or not. The property "type" records this information. Also, there will be abstract posts which do not actually exist on the model airport but are there so that a map of the airport can be created. Overall, three posts types are there: E-Posts, RE-Posts, and No-Posts (Abstract Posts). The property "location" records where the post is. For example, a post could be named like "Backstage Entrance" or "Runway Line-Up". Every post has to be connected to the Raspberry Pi electronically through some pin, and hence the GPIO_pin property. The occupied properties help the ModelAirportGTC to be able to track the aircraft and the future state of the airport. ModelAircrafts stores information and history about the aircraft. Like it was stated before, these two different dictionaries which contain information about the airport make up the virtual image of the airport. In every state, this image gets constantly modified and then reflected onto the real model airport. A third dictionary will contain objects of the model airport which do not link to other objects such as lighting and sound. These are to be used by ModelAirportGraph.py to control devices attached to them abstractly.
+ModelAirportImager's main job is to create an image of the airport and also use ModelAirportGPIO to output the image. ModelAirportImager class will store that image using two dictionaries. The first dictionary is called ModelAirportCheckposts. ModelAirportCheckposts stores a "graph" of all the sensor posts on the model airport. The posts act as a checkpoint for all aircraft. Planes go from one post to another in most states. Two different sensor posts will be on the airport: E-Post and RE-Post. E-Posts are sensor posts with just an emitter and no receiver. They can control the aircraft but cannot detect whether the aircraft is present at the post. RE-Posts are sensor posts with an emitter and a receiver but they can detect whether the aircraft is at the post or not. The property "type" records this information. Also, there will be abstract posts which do not actually exist on the model airport but are there so that a map of the airport can be created. Overall, three posts types are there: E-Posts, RE-Posts, and No-Posts (Abstract Posts). The property "location" records where the post is. For example, a post could be named like "Backstage Entrance" or "Runway Line-Up". Every post has to be connected to the Raspberry Pi electronically through some pin, and hence the GPIO_pin property. The occupied properties help the ModelAirportGTC to be able to track the aircraft and the future state of the airport. ModelAircrafts stores information and history about the aircraft. Like it was stated before, these two different dictionaries which contain information about the airport which make up the virtual image of the airport. In every state, this image gets constantly modified and then reflected onto the real model airport. A third dictionary will contain objects of the model airport which do not link to other objects such as lighting and sound. This is to be used by ModelAirportImager.py process to control devices attached to them independently from the rest of the synchronized operations of the model airport.
+
 #### Pseudocode
 
 Data from ModelAirportCheckposts.txt:
@@ -135,7 +136,7 @@ Data from ModelAirportAccessories.txt:
 
 ```python
 
-class ModelAirportGraph:
+class ModelAirportImager:
 
   def __init__(self)
     pass
@@ -173,7 +174,7 @@ class ModelAirportGraph:
 
 #### Description
 
-Logs all actions that ModelAirportGraph.py does.
+Logs all actions that ModelAirportATC.py instance does.
 
 #### Pseudocode
 
