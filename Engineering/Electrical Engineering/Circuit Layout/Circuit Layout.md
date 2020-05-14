@@ -14,7 +14,7 @@ RE-Post 2    *-------------
           /                  \
          |                    |
           \                  /
- E-Post 1  *                /
+           \                /
             \              /
              -------------* RE-Post 1
 ```
@@ -23,11 +23,11 @@ RE-Post 2    *-------------
 
 | Components | Quantity | Notes|
 | --- | --- | --- |
-| IR LED Emitters| 3 | |
+| IR LED Emitters| 4 | |
 | IR LED Receivers | 2 | |
 | 22 AWG Wires | >10 ft.| |
 | M/F Jumper Cables | 6 | |
-| Check posts | 3 | get from Structural Engineering |
+| Check posts | 2 | get from Structural Engineering |
 
 
 ## Notes
