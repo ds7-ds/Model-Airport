@@ -1,11 +1,12 @@
 import ast
 #from gpiozero import LEDBoard, ButtonBoard
-#from time import sleep
+import os
 
 class ModelAirportGPIO:
-    def __init__(self, filepath):
+    def __init__(self):
         try:
-            f = open(filepath, "r")
+            gpioPath = os.path.join(os.pardir, os.pardir, "res", "ModelAirportGPIO.txt")
+            f = open(gpioPath, "r")
             s = f.read()
             f.close()
             self.layout = ast.literal_eval(s)
@@ -24,7 +25,7 @@ class ModelAirportGPIO:
             #self.output = LEDBoard(*outputPins)
         except:
             print("[ModelAirportGPIO] File Reading Error...")
-    def get_Device_State(self, item):
+    def getDeviceState(self, item):
         if item in self.layout:
             if "Input_GPIO_Pin" in self.layout[item]:
                 print("[ModelAirportGPIO] Input Device Request Index: ", self.layout[item]["Input_GPIO_Pin"]["Index"])
@@ -32,7 +33,7 @@ class ModelAirportGPIO:
                 return self.layout[item]["Input_GPIO_Pin"]["Index"]
         print("[ModelAirportGPIO] Input Device Request Error: Device (", item,") Not Found...")
         return -1
-    def set_Device_State(self, item, state):
+    def setDeviceState(self, item, state):
         if item in self.layout:
             if state == True:
                 if "Output_GPIO_Pin" in self.layout[item]:
@@ -42,8 +43,3 @@ class ModelAirportGPIO:
                 if "Output_GPIO_Pin" in self.layout[item]:
                     print("[ModelAirportGPIO] Output Device Request Index: ", self.layout[item]["Output_GPIO_Pin"]["Index"], "        State:  FALSE")
                     #self.output.off(self.layout[object]["Output_GPIO_Pin"]["Index"])
-
-test = ModelAirportGPIO("D:/Darshan/Personal/Hobbies/Model Airport/Model Airport Final/Model-Airport/Engineering/Software Engineering/Code/Raspberry Pi/model-airport/res/ModelAirportGPIO.txt")
-test.set_Device_State("Pavement-Lighting", True)
-test.set_Device_State("Pavement-Lighting", False)
-val = test.get_Device_State("Backstge-Exit")

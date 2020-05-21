@@ -1,38 +1,31 @@
 {
-   "Backstage-Exit":{
+   "Backstage-Entrance":{
       "Device":"RE_Post_1",
       "Input_GPIO_Pin":{
-         "Pin":23,
+         "Pin":27,
          "Index":0
       },
       "Output_GPIO_Pin":{
-         "Pin":24,
+         "Pin":17,
          "Index":0
-      }
-   },
-   "Taxiway-Runway-Holding":{
-      "Device":"E_Post_1",
-      "Output_GPIO_Pin":{
-         "Pin":25,
-         "Index":1
       }
    },
    "Runway-Threshold":{
       "Device":"RE_Post_2",
       "Input_GPIO_Pin":{
-         "Pin":27,
+         "Pin":24,
          "Index":1
       },
       "Output_GPIO_Pin":{
-         "Pin":22,
-         "Index":2
+         "Pin":23,
+         "Index":1
       }
    },
    "Pavement-Lighting":{
       "Device":"Pavement_Lighting",
       "Output_GPIO_Pin":{
-         "Pin":17,
-         "Index":3
+         "Pin":25,
+         "Index":2
       }
    }
 }
