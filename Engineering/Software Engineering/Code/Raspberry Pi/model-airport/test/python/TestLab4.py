@@ -22,3 +22,9 @@ while i < 3:
     print("[TestLab4] Runway-Threshold: ", test.getDeviceState("Runway-Threshold"))
     sleep(30)
     i = i + 1
+    
+print("[TestLab4] Disabling All Devices")
+test.setDeviceState("Backstage-Entrance", False)
+print("[TestLab4] Backstage-Entrance: ",  test.getDeviceState("Backstage-Entrance"))
+test.setDeviceState("Runway-Threshold", True)
+print("[TestLab4] Runway-Threshold: ", test.getDeviceState("Runway-Threshold"))

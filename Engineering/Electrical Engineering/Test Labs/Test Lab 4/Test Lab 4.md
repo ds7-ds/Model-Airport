@@ -2,7 +2,7 @@
 
 ### Hypothesis
 
-> Testing Checkposts and Robot using TestLab4.py. Robot should be able to run around the airport and stop at each checkpost.
+> Testing Checkposts and Robot using TestLab4.py. Robot should be able to run around the airport and stop at each checkpost. Checkposts should be able to detect robot is at checkpost.
 
 ### Instructions
 
@@ -12,4 +12,4 @@
 
 ### Results:
 
-> Pending.
+> Test proved partially successful. Airplane was able to run-around and stop at checkposts however multiple issues cropped up. See GitHub Issues [#35](https://github.com/DarshanShet777/Model-Airport/issues/35) and [#36](https://github.com/DarshanShet777/Model-Airport/issues/36)
