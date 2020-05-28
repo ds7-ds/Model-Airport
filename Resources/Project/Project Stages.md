@@ -117,29 +117,37 @@
          * Test app using multiple devices
          * Hack app if possible
          * Fix errors/ loopholes present
+      * Webcam
+         * Find webcam devices or software so website may access it
+         * Understand webcam tool so it may be used correctly
+         * Create sustainable connections every time
+         * Test webcam tool through multiple volunteers
+      * Test model airport overall
+         * Ensure model airport software works as expected
+         * Ensure server works
+         * Ensure website works
    * Finance
       * None
    * Resources
       * Document important project information
       * Invite members to project
 
-## Phase 5 - Add-Ons\(Asynchronized\)
-   * Group Members
-      * Darshan Shet
+## Phase 5 - Scenery/Add-Ons \(Synchronized Step 4\)
    * Structural Engineering
-      * None
+      * Create scenery on Surface
+      * Create holes for LED lights
+      * Add wallpaper for backstage
+      * Clean up model airport with cloth for video recording
    * Mechanical Engineering
       * None
    * Electrical Engineering
-      * None
+      * Create airport lighting schematics
+      * Install lights
    * Software Engineering
-      * Webcam
-         * Find webcam devices or software so website may access it
-         * Understand webcam tool so it may be used correctly
-         * Create sustainable connections every time
-         * Test webcam tool through multiple volunteers
-   * Finance
       * None
+   * Finance
+      * Update Inventory sheets
+      * Update Budget sheet
+      * Track purchases made by engineering
    * Resources
       * Document important project information
-      * Invite members to project
