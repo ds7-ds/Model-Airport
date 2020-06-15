@@ -1,5 +1,11 @@
 # Python Files Documentation
 
+## QuickConnect.py
+
+#### Description
+
+QuickConnect's job is to run the model airport using a set routine. This program is a simplified version of ConnectATC without the underlying classes except ModelAirportGPIO. QuickConnect first aligns the robot at the backstage and then notifies calling program via a print() statement. Then, it waits for user input without restrictions. The first input it will expect is the call for the airplane to "line up on the runway". Once, it has received that call, it will move the airplane to the runway. The second input it expects is the call for the airplane to be "cleared for takeoff". Then, it will move the airplane from the runway to the backstage and the cycle starts over again. If invalid user input is received, the program simply prints "ATC Say Again". 
+
 ## ConnectATC.py
 
 #### Description
