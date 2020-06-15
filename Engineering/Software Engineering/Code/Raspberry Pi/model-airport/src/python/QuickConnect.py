@@ -15,7 +15,7 @@ sleep(20)
 
 # Determine end time for program
 currentTime = datetime.now()
-shutOffTime = currentTime + timedelta(minutes = 1)
+shutOffTime = currentTime + timedelta(seconds = 20)
 
 # Run model airport until end time has been reached
 while currentTime < shutOffTime:

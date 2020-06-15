@@ -1,0 +1,14 @@
+{
+  "name": "model-airport",
+  "version": "1.0.0",
+  "description": "Runs model airport software written in Python using shells. Communicates with Heroku server and establishes WebSocket connection so client may send/receive messages.",
+  "main": "model-airport.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Darshan Shet",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "python-shell": "^2.0.1"
+  }
+}
