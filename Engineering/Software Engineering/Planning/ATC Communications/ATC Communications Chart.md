@@ -20,25 +20,18 @@ Client <----> Server <----> Raspberry Pi
 
 | Client | Server | Raspberry Pi \(RPi\) |
 | :---: | :---: | :---: |
-| [P] Waiting for pilot response...<br>[A] Please wait... | - | ATC Requesting Departure <br> SAA202 Runway 09 Taxi Via Alpha |
-| [P] Waiting for pilot response...<br>[A] Please wait... | \(Waiting for client to retrieve message\) | - |
-| [P] ATC Requesting Departure<br>[A] SAA202 Runway 09 Taxi Via Alpha <br> \(Waiting for user input\) | - | - |
-| [P] Waiting for pilot response...<br>[A] Please wait... | \(Waiting for RPi to retrieve message\) | - |
-| [P] Waiting for pilot response...<br>[A] Please wait... | - | \(Retrieves, processes message and returns response\) <br> ATC Runway 09 Taxi Via Alpha<br>SAA202 Runway 09 Hold Short|
-| [P] Waiting for pilot response...<br>[A] Please wait... | \(Waiting for client to retrieve message\) | \(Moving airplane 1 if needed\) |
-| [P] ATC Runway 09 Taxi Via Alpha <br> [A] SAA202 Runway 09 Hold Short <br> \(Waiting for user input\) | - | - |
-| [P] Waiting for pilot response...<br>[A] Please wait... | \(Waiting for RPi to retrieve message\) | - |
-| [P] Waiting for pilot response...<br>[A] Please wait... | - | \(Retrieves, processes message and returns response\) <br> ATC Runway 09 Hold Short <br> SAA202 Runway 09 Line Up And Wait |
-| [P] Waiting for pilot response...<br>[A] Please wait... | \(Waiting for client to retrieve message\) | \(Moving airplane 1 if needed\) |
-| [P] ATC Runway 09 Hold Short <br> [A] SAA202 Runway 09 Line Up And Wait <br> \(Waiting for user input\) | - | - |
-| [P] Waiting for pilot response...<br>[A] Please wait... | \(Waiting for RPi to retrieve message\) | - |
-| [P] Waiting for pilot response...<br>[A] Please wait... | - | \(Retrieves, processes message and returns response\) <br> ATC Runway 09 Line Up And Wait <br> SAA202 Runway 09 Cleared For Takeoff |
-| [P] Waiting for pilot response...<br>[A] Please wait... | \(Waiting for client to retrieve message\) | \(Moving airplane 1 if needed\) |
-| [P] ATC Runway 09 Line Up And Wait  <br> [A] SAA202 Runway 09 Cleared For Takeoff <br> \(Waiting for user input\) | - | - |
-| [P] Waiting for pilot response...<br> [A] Please wait... | \(Waiting for RPi to retrieve message\) | - |
-| [P] Waiting for pilot response...<br> [A] Please wait... | - | \(Retrieves, processes message and returns response\) <br> ATC Runway 09 Cleared For Takeoff <br> None |
-| [P] Waiting for pilot response...<br>[A] Please wait... | \(Waiting for client to retrieve message\) | \(Moving airplane 1 if needed\) |
-| [P] ATC Runway 09 Cleared For Takeoff <br> [A] Please wait.. | - | - |
+| [P] Waiting for pilot response...<br>[A] Please wait... | - | ATC Requesting Departure <br> Type "SA202 Runway 09 Line Up And Wait" |
+| [P] Waiting for pilot response...<br>[A] Please wait... | \(Received message from RPI <br> Sending message to client\) | - |
+| [P] ATC Requesting Departure<br>[A] Type " SA202 Runway 09 Line Up And Wait" <br> \(Waiting for user input\) | - | - |
+| [P] Waiting for pilot response...<br>[A] Please wait... | \(Received message from client <br> Sending message to RPi\) | - |
+| [P] Waiting for pilot response...<br>[A] Please wait... | - | \(Retrieves, processes message and returns response\) <br> ATC Runway 09 Line Up And Wait<br>Type "SA202 Cleared For Takeoff"|
+| [P] Waiting for pilot response...<br>[A] Please wait... | \(Received message from RPI <br> Sending message to client\) | \(Moving airplane 1\) |
+| [P] ATC Runway 09 Line Up And Wait <br> [A] Type "SA202 Cleared For Takeoff" <br> \(Waiting for user input\) | - | - |
+| [P] Waiting for pilot response...<br>[A] Please wait... | \(Received message from client <br> Sending message to RPi\) | - |
+| [P] Waiting for pilot response...<br>[A] Please wait... | - | \(Retrieves, processes message and returns response\) <br> ATC Cleared For Takeoff <br> Please Wait... |
+| [P] Waiting for pilot response...<br>[A] Please wait... | \(Received message from RPI <br> Sending message to client\) | \(Moving airplane 1\) |
+| [P] ATC Cleared For Takeoff <br> [A] Please wait... | - | - |
+| [P] Waiting for pilot response...<br>[A] Please wait... | - | ATC Requesting Departure <br> Type "SA202 Runway 09 Line Up And Wait" |
 
 ## Possible Communications with 1 Airplane \(Scenario 2\)
 
