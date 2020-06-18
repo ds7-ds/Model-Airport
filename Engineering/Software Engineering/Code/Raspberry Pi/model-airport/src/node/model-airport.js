@@ -5,8 +5,12 @@ let options = {
 	mode : 'text'
 };
 
-let pyshell = new PythonShell('../python/ModelAirportAuto.py', options);
+let pyshell = new PythonShell('../python/QuickConnect.py', options);
 
 pyshell.on('message', function(message){
 	console.log(message);
+	if(message.includes("[Input]")){
+		pyshell.send("N");
+	}
+	
 });
