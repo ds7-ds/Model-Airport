@@ -16,19 +16,24 @@ sleep(1)
 
 # Determine end time for program
 currentTime = datetime.now()
-shutOffTime = currentTime + timedelta(seconds = 30)
+shutOffTime = currentTime + timedelta(minutes = 30)
 
 # Determine if caller is ready to run the airport
-print("[QuickConnect][Input] Ready?")
+print("[QuickConnect] Ready?")
 isReady = input()
-
-if(isReady != "Y"):
-    # Turn off all devices and shut down model airport
-    gpio.setDeviceState("Pavement-Lighting", False)
-    gpio.setDeviceState("Backstage-Entrance", False)
-    gpio.setDeviceState("Runway-Threshold", False)
-    print('[QuickConnect] Exiting...')
-    sys.exit(0)
+while isReady != "Yes":
+    # Wait for 10 seconds and then ask again
+    sleep(10)
+    currentTime = datetime.now()
+    # If still no response and past closing time, shut down model airport
+    if currentTime > shutOffTime:
+        print('[QuickConnect] Exiting...')
+        gpio.setDeviceState("Pavement-Lighting", False)
+        gpio.setDeviceState("Backstage-Entrance", False)
+        gpio.setDeviceState("Runway-Threshold", False)
+        sys.exit(0)
+    print("[QuickConnect] Ready?")
+    isReady = input()
 
 # Run model airport until end time has been reached
 # Get input from caller and verify
@@ -36,19 +41,21 @@ if(isReady != "Y"):
 
 while currentTime < shutOffTime:
     # Initiate airport operation by printing request message to user
-    print("ATC Requesting Departure;Type \"SA202 Runway 09 Line Up And Wait\"")
+    print("ATC Requesting Departure;SA202 Runway 09 Line Up And Wait")
     # Activate the runway and allow robot to move when user enters the right input
     getCommand = input()
     while(getCommand != "SA202 Runway 09 Line Up And Wait"):
+        print("ATC Say Again;SA202 Runway 09 Line Up And Wait")
         getCommand = input()
     gpio.setDeviceState("Backstage-Entrance", False)
     gpio.setDeviceState("Runway-Threshold", True)
     sleep(3)
     
     # Activate the backstage and allow robot to move
-    print("ATC Runway 09 Line Up And Wait;Type \"SA202 Cleared For Takeoff\"")
+    print("ATC Runway 09 Line Up And Wait;SA202 Cleared For Takeoff")
     getCommand = input()
     while(getCommand != "SA202 Cleared For Takeoff"):
+        print("ATC Say Again;SA202 Cleared For Takeoff")
         getCommand = input()
     print("ATC Cleared For Takeoff;Please Wait...")
     gpio.setDeviceState("Runway-Threshold", False)
