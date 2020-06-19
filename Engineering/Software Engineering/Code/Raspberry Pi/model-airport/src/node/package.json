@@ -9,6 +9,7 @@
   "author": "Darshan Shet",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "python-shell": "^2.0.1"
+    "python-shell": "^2.0.1",
+    "ws": "^7.3.0"
   }
 }

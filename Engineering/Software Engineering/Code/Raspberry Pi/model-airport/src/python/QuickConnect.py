@@ -44,23 +44,25 @@ while currentTime < shutOffTime:
     print("ATC Requesting Departure;SA202 Runway 09 Line Up And Wait")
     # Activate the runway and allow robot to move when user enters the right input
     getCommand = input()
-    while(getCommand != "SA202 Runway 09 Line Up And Wait"):
+    while(getCommand != "sa202 runway 09 line up and wait"):
         print("ATC Say Again;SA202 Runway 09 Line Up And Wait")
         getCommand = input()
+    print("[QuickConnect] Activating Runway...")
     gpio.setDeviceState("Backstage-Entrance", False)
     gpio.setDeviceState("Runway-Threshold", True)
-    sleep(3)
+    sleep(10)
     
     # Activate the backstage and allow robot to move
     print("ATC Runway 09 Line Up And Wait;SA202 Cleared For Takeoff")
     getCommand = input()
-    while(getCommand != "SA202 Cleared For Takeoff"):
+    while(getCommand != "sa202 cleared for takeoff"):
         print("ATC Say Again;SA202 Cleared For Takeoff")
         getCommand = input()
+    print("[QuickConnect] Activating Backstage...")
     print("ATC Cleared For Takeoff;Please Wait...")
     gpio.setDeviceState("Runway-Threshold", False)
     gpio.setDeviceState("Backstage-Entrance", True)
-    sleep(3)
+    sleep(10)
     # Update time so loop exits correctly
     currentTime = datetime.now()
 
