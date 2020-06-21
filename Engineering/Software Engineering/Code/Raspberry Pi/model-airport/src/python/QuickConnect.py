@@ -12,11 +12,11 @@ gpio.setDeviceState("Pavement-Lighting", True)
 
 # Align robot at the backstage
 gpio.setDeviceState("Backstage-Entrance", True)
-sleep(1)
+sleep(25)
 
 # Determine end time for program
 currentTime = datetime.now()
-shutOffTime = currentTime + timedelta(minutes = 30)
+shutOffTime = currentTime + timedelta(minutes = 75)
 
 # Determine if caller is ready to run the airport
 print("[QuickConnect] Ready?")
@@ -44,7 +44,7 @@ while currentTime < shutOffTime:
     print("ATC Requesting Departure;SA202 Runway 09 Line Up And Wait")
     # Activate the runway and allow robot to move when user enters the right input
     getCommand = input()
-    while(getCommand != "sa202 runway 09 line up and wait"):
+    while(getCommand != "SA202 Runway 09 Line Up And Wait"):
         print("ATC Say Again;SA202 Runway 09 Line Up And Wait")
         getCommand = input()
     print("[QuickConnect] Activating Runway...")
@@ -55,7 +55,7 @@ while currentTime < shutOffTime:
     # Activate the backstage and allow robot to move
     print("ATC Runway 09 Line Up And Wait;SA202 Cleared For Takeoff")
     getCommand = input()
-    while(getCommand != "sa202 cleared for takeoff"):
+    while(getCommand != "SA202 Cleared For Takeoff"):
         print("ATC Say Again;SA202 Cleared For Takeoff")
         getCommand = input()
     print("[QuickConnect] Activating Backstage...")

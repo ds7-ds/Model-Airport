@@ -19,7 +19,14 @@ ws.on('open', function open(){
 });
 
 ws.on('message', function incoming(msg){
-	pyshell.send(msg);
+	console.log(msg);
+	if(msg.includes("Viewer Disconnected")){
+		console.log("Restarting...");
+		process.exit(1);
+	}
+	else{
+		pyshell.send(msg);
+	}
 });
 
 pyshell.on('message', function(message){
@@ -28,24 +35,8 @@ pyshell.on('message', function(message){
 		if(message.includes("Ready?")){
 			ws.send("Ready?");
 		}
-		else if(message.includes("Exiting...")){
-			console.log("Exiting...");
-		}
-		else{
-			console.log(message);
-		}
 	}
 	else{
 		ws.send(message);
 	}
-	
-	//Code below tests model airport software
-	/*
-	if(message.includes("ATC Requesting Departure;Type \"SA202 Runway 09 Line Up And Wait\"")){
-		pyshell.send("SA202 Runway 09 Line Up And Wait");
-	}
-	if(message.includes("ATC Runway 09 Line Up And Wait;Type \"SA202 Cleared For Takeoff\"")){
-		pyshell.send("SA202 Cleared For Takeoff");
-	}
-	*/
 });
