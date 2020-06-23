@@ -1,5 +1,8 @@
 #!/bin/bash
 
+read -t 10 -p "Waiting for desktop to load..."
+echo
+
 
 echo "Finding model airport software..."
 if [ -d ../../../../media/pi/9484-DE4D/model-airport/src/node ]
@@ -11,12 +14,12 @@ then
 		echo "File found..."
 	else
 		echo "File not found..."
-		read -t 30 -p "Closing in 30 seconds..."
+		read -t 10 -p "Closing in 10 seconds..."
 		exit
 	fi
 else
 	echo "Directory not found..."
-	read -t 30 -p "Closing in 30 seconds..."
+	read -t 10 -p "Closing in 10 seconds..."
 	exit
 fi
 
@@ -24,8 +27,8 @@ fi
 echo "Determining start-up and shut-down times..."
 startTime=$(date)
 startTimeInt=$(date +%s)
-endTime=$(date --date='30 minutes')
-endTimeInt=$(date --date='30 minutes' +%s)
+endTime=$(date --date='40 minutes')
+endTimeInt=$(date --date='40 minutes' +%s)
 echo $startTime
 echo $endTime
 
@@ -52,5 +55,4 @@ then
 	softwarePID=$(pgrep node)
 	kill $softwarePID
 fi
-
-
+sudo shutdown -h now
