@@ -5,12 +5,14 @@ from ModelAirportGPIO import ModelAirportGPIO
 from datetime import datetime, timedelta
 
 # Setup GPIO
+print("[QuickConnect] Setting up GPIO...")
 gpio = ModelAirportGPIO()
 
 # Turn lights on
 gpio.setDeviceState("Pavement-Lighting", True)
 
 # Align robot at the backstage
+print("[QuickConnect] Waiting for robot to align...")
 gpio.setDeviceState("Backstage-Entrance", True)
 sleep(25)
 
@@ -47,13 +49,14 @@ while currentTime < shutOffTime:
     while(getCommand != "SA202 Runway 09 Line Up And Wait"):
         print("ATC Say Again;SA202 Runway 09 Line Up And Wait")
         getCommand = input()
+    print("ATC Runway 09 Line Up And Wait;Please Wait...")
     print("[QuickConnect] Activating Runway...")
     gpio.setDeviceState("Backstage-Entrance", False)
     gpio.setDeviceState("Runway-Threshold", True)
-    sleep(10)
+    sleep(15)
     
     # Activate the backstage and allow robot to move
-    print("ATC Runway 09 Line Up And Wait;SA202 Cleared For Takeoff")
+    print("Waiting for your response...;SA202 Cleared For Takeoff")
     getCommand = input()
     while(getCommand != "SA202 Cleared For Takeoff"):
         print("ATC Say Again;SA202 Cleared For Takeoff")
@@ -62,7 +65,7 @@ while currentTime < shutOffTime:
     print("ATC Cleared For Takeoff;Please Wait...")
     gpio.setDeviceState("Runway-Threshold", False)
     gpio.setDeviceState("Backstage-Entrance", True)
-    sleep(10)
+    sleep(15)
     # Update time so loop exits correctly
     currentTime = datetime.now()
 
