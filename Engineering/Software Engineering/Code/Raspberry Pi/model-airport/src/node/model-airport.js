@@ -29,6 +29,11 @@ ws.on('message', function incoming(msg){
 	}
 });
 
+ws.on('close', function close(){
+		console.log("Server disconnected...");
+		process.exit(1);
+});
+
 pyshell.on('message', function(message){
 	console.log(message);
 	if(message.includes("[QuickConnect]")){
