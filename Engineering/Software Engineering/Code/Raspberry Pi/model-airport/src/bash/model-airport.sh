@@ -1,11 +1,22 @@
 #!/bin/bash
 
-read -t 5 -p "Waiting for desktop to load..."
+read -t 15 -p "Waiting for desktop to load..."
 echo
 
+echo "Checking proxy server status..."
+if wget -q --spider https://model-airport.herokuapp.com
+then
+	echo ONLINE
+else
+	echo OFFLINE
+	read -t 30 -p "Shutting down in 30 seconds..."
+	sudo shutdown -h now	
+fi
 
 echo "Finding model airport software..."
-#If flash drive changes, fix the ID by looking it up on CMD using this path ../../media/pi/FLASH-DRIVE-ID
+: '
+If flash drive changes, fix the ID by looking it up on CMD using this path ../../media/pi/FLASH-DRIVE-ID
+'
 flashDriveID=E89D-1133
 filePath=../../../../media/pi/$flashDriveID/model-airport/src/node
 if [ -d $filePath ]
@@ -17,13 +28,13 @@ then
 		echo "File found..."
 	else
 		echo "File not found..."
-		read -t 5 -p "Closing in 5 seconds..."
-		exit
+		read -t 30 -p "Shutting down in 30 seconds..."
+		sudo shutdown -h now
 	fi
 else
 	echo "Directory not found..."
-	read -t 5 -p "Closing in 5 seconds..."
-	exit
+	read -t 30 -p "Shutting down in 30 seconds..."
+	sudo shutdown -h now
 fi
 
 
@@ -52,7 +63,7 @@ do
 done
 
 
-echo "Shutting down software and RPi..."
+read -t 10 -p "Shutting down software and RPi..."
 if pgrep node
 then
 	softwarePID=$(pgrep node)
