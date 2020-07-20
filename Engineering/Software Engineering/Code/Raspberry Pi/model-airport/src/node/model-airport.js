@@ -9,7 +9,7 @@ let options = {
 	mode : 'text'
 };
 let pyshell = new PythonShell('../python/QuickConnect.py', options);
-const ws = new proxySocket("ws://model-airport.herokuapp.com");
+const ws = new proxySocket("wss://model-airport.herokuapp.com");
 
 
 
