@@ -1,9 +1,11 @@
 #!/bin/bash
 
-read -t 15 -p "Waiting for desktop to load..."
+
+read -t 2 -p "Waiting for desktop to load..."
 echo
 
-echo "Checking proxy server status..."
+
+echo "Checking messaging proxy server status..."
 if wget -q --spider https://model-airport.herokuapp.com
 then
 	echo ONLINE
@@ -13,16 +15,28 @@ else
 	sudo shutdown -h now	
 fi
 
-echo "Finding model airport software..."
+
+echo "Checking webcam proxy server status..."
+if wget -q --spider https://whispering-sea-51322.herokuapp.com
+then
+	echo ONLINE
+else
+	echo OFFLINE
+	read -t 30 -p "Shutting down in 30 seconds..."
+fi
+
+
+echo "Finding model airport control and webcam software..."
 : '
 If flash drive changes, fix the ID by looking it up on CMD using this path ../../media/pi/FLASH-DRIVE-ID
 '
 flashDriveID=E89D-1133
-filePath=../../../../media/pi/$flashDriveID/model-airport/src/node/model-airport-core
-if [ -d $filePath ]
+controlSoftwareFilePath=/media/pi/$flashDriveID/model-airport/src/node/model-airport-core
+webcamSoftwareFilePath=/media/pi/$flashDriveID/model-airport/src/node/model-airport-webcam-proxy-local/bin
+if [ -d $controlSoftwareFilePath ]
 then
 	echo "Directory found..."
-	cd $filePath
+	cd $controlSoftwareFilePath
 	if [ -f model-airport.js ]
 	then
 		echo "File found..."
@@ -47,7 +61,6 @@ echo $startTime
 echo $endTime
 
 
-
 echo "Running software until shut-down time..."
 runTimeInt=$(date +%s)
 while [ $runTimeInt -le $endTimeInt ]
@@ -55,7 +68,10 @@ do
 	if ! pgrep node
 	then
 		echo "Restarting..."
+		cd $controlSoftwareFilePath
 		lxterminal -e 'bash -c "node model-airport.js; exit"'
+		cd $webcamSoftwareFilePath
+		lxterminal -e 'bash -c "node www; exit"'
 	fi
 	read -t 10 -p "Checking in 10 seconds..."
 	echo 
@@ -64,9 +80,5 @@ done
 
 
 read -t 10 -p "Shutting down software and RPi..."
-if pgrep node
-then
-	softwarePID=$(pgrep node)
-	kill $softwarePID
-fi
+for pid in `ps -ef | pgrep node`; do kill $pid; done
 sudo shutdown -h now
