@@ -18,7 +18,7 @@ echo "Finding model airport software..."
 If flash drive changes, fix the ID by looking it up on CMD using this path ../../media/pi/FLASH-DRIVE-ID
 '
 flashDriveID=E89D-1133
-filePath=../../../../media/pi/$flashDriveID/model-airport/src/node
+filePath=../../../../media/pi/$flashDriveID/model-airport/src/node/model-airport-core
 if [ -d $filePath ]
 then
 	echo "Directory found..."

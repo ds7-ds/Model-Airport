@@ -5,7 +5,8 @@ import os
 
 class ModelAirportGPIO:
     def __init__(self):
-        gpioPath = os.path.join(os.pardir, os.pardir, "res", "ModelAirportGPIO.txt")
+        #gpioPath = os.path.join(os.pardir, os.pardir, "res", "ModelAirportGPIO.txt")
+        gpioPath = '/media/pi/E89D-1133/model-airport/res/ModelAirportGPIO.txt'
         f = open(gpioPath, "r").read()
         self.layout = ast.literal_eval(f)
         tempInputPins = []

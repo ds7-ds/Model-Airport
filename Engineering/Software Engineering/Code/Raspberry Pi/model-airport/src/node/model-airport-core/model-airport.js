@@ -8,7 +8,7 @@ let options = {
 	pythonOptions: ['-u'],
 	mode : 'text'
 };
-let pyshell = new PythonShell('../python/QuickConnect.py', options);
+let pyshell = new PythonShell('../../python/QuickConnect.py', options);
 const ws = new proxySocket("wss://model-airport.herokuapp.com");
 
 
@@ -44,4 +44,9 @@ pyshell.on('message', function(message){
 	else{
 		ws.send(message);
 	}
+});
+
+pyshell.on('error', function error(err){
+	console.log(err);
+	process.exit(1);
 });
