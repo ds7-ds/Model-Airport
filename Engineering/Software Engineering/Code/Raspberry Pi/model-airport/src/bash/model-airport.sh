@@ -23,6 +23,7 @@ then
 else
 	echo OFFLINE
 	read -t 30 -p "Shutting down in 30 seconds..."
+	sudo shutdown -h now
 fi
 
 
@@ -55,8 +56,8 @@ fi
 echo "Determining start-up and shut-down times..."
 startTime=$(date)
 startTimeInt=$(date +%s)
-endTime=$(date --date='40 minutes')
-endTimeInt=$(date --date='40 minutes' +%s)
+endTime=$(date --date='35 minutes')
+endTimeInt=$(date --date='35 minutes' +%s)
 echo $startTime
 echo $endTime
 
@@ -80,5 +81,8 @@ done
 
 
 read -t 10 -p "Shutting down software and RPi..."
+: '
+	stackoverflow.com/questions/21470362/find-the-pids-of-running-processes-and-store-as-an-array
+'
 for pid in `ps -ef | pgrep node`; do kill $pid; done
 sudo shutdown -h now
