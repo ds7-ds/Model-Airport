@@ -2,14 +2,17 @@
 
 
 echo "Logging bash output to file..."
+: '
+If flash drive changes, fix the ID by looking it up on CMD using this path ../../media/pi/FLASH-DRIVE-ID
+'
 flashDriveID=E89D-1133
 logFilePath=/media/pi/$flashDriveID/model-airport/logs
 echo $(date) >> log.txt
 
 
-read -t 2 -p "Waiting for desktop to load..."
-echo ""
 echo "Waiting for desktop to load..." >> log.txt
+read -t 15 -p "Waiting for desktop to load..."
+echo
 
 
 echo "Checking messaging proxy server status..."
@@ -29,6 +32,7 @@ fi
 
 
 echo "Checking webcam proxy server status..."
+echo "Checking webcam proxy server status..." >> log.txt
 if wget -q --spider https://whispering-sea-51322.herokuapp.com
 then
 	echo ONLINE
@@ -45,9 +49,6 @@ fi
 
 echo "Finding model airport control and webcam software..."
 echo "Finding model airport control and webcam software..." >> log.txt
-: '
-If flash drive changes, fix the ID by looking it up on CMD using this path ../../media/pi/FLASH-DRIVE-ID
-'
 controlSoftwareFilePath=/media/pi/$flashDriveID/model-airport/src/node/model-airport-core
 webcamSoftwareFilePath=/media/pi/$flashDriveID/model-airport/src/node/model-airport-webcam-proxy-local/bin
 if [ -d $controlSoftwareFilePath ]
@@ -63,7 +64,7 @@ then
 		echo "File not found..."
 		echo "File not found..." >> log.txt
 		echo "Shutting down in 30 seconds..." >> log.txt
-	  cp log.txt $logFilePath
+		cp log.txt $logFilePath
 		read -t 30 -p "Shutting down in 30 seconds..."
 		sudo shutdown -h now
 	fi
@@ -71,7 +72,7 @@ else
 	echo "Directory not found..."
 	echo "Directory not found..." >> log.txt
 	echo "Shutting down in 30 seconds..." >> log.txt
-  cp log.txt $logFilePath
+	cp log.txt $logFilePath
 	read -t 30 -p "Shutting down in 30 seconds..."
 	sudo shutdown -h now
 fi
