@@ -8,7 +8,7 @@ If flash drive changes, fix the ID by looking it up on CMD using this path ../..
 flashDriveID=E89D-1133
 logFilePath=/media/pi/$flashDriveID/model-airport/logs
 cd ~
-echo $(date) >> log.txt
+echo "------------------------------------------------------------" >> log.txt
 
 
 echo "Waiting for desktop to load..." >> log.txt
@@ -110,8 +110,11 @@ do
 		lxterminal -e 'bash -c "node model-airport.js; exit"'
 		cd $webcamSoftwareFilePath
 		lxterminal -e 'bash -c "node www; exit"'
+		read -t 1
 		cd ~
 		echo $(date) >> log.txt
+		ps -eaf | grep node | grep -v -e bash -e grep | awk '/model-airport.js/ {print $2 " " $9}' >> log.txt
+		ps -eaf | grep node | grep -v -e bash -e grep | awk '/www/ {print $2 " " $9}' >> log.txt
 	fi
 	read -t 10 -p "Checking in 10 seconds..."
 	echo 
