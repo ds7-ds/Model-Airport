@@ -6,7 +6,7 @@
          "Index":0
       },
       "Output_GPIO_Pin":{
-         "Pin":17,
+         "Pin":24,
          "Index":0
       }
    },
@@ -17,14 +17,14 @@
          "Index":1
       },
       "Output_GPIO_Pin":{
-         "Pin":23,
+         "Pin":25,
          "Index":1
       }
    },
    "Pavement-Lighting":{
       "Device":"Pavement_Lighting",
       "Output_GPIO_Pin":{
-         "Pin":25,
+         "Pin":16,
          "Index":2
       }
    }
